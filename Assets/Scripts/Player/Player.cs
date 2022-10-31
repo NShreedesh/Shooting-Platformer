@@ -9,26 +9,17 @@ public class Player : MonoBehaviour
     private InputManager inputManager;
 
     [Header("Components")]
+    [HideInInspector]
     public Rigidbody2D rb;
 
     [Header("Input Values")]
+    [HideInInspector]
     public float horizontalInput;
+    [HideInInspector]
     public float verticalInput;
 
-    [Header("Movement")]
-    [SerializeField]
-    private float xVelocity;
-    [SerializeField]
-    private float speed = 5;
-    [SerializeField]
-    private float speedMultiplier = 1;
-
     [Header("Jump")]
-    [SerializeField]
-    private float jumpForce = 5;
-    [SerializeField]
     public bool canJump;
-    [SerializeField]
     public bool isGrounded;
 
     [Header("Raycasting")]

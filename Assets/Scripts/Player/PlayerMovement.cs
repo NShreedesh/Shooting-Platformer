@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField]
-    private float speed = 500;
+    private float speed = 300;
     [SerializeField]
-    private float speedMultiplier = 5;
+    private float groundedSpeedMultiplier = 5;
+    [SerializeField]
+    private float airborneSpeedMultiplier = 2;
     private float xVelocity;
 
     [Header("Jump")]
@@ -30,11 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        player.rb.velocity = new Vector2(xVelocity * Time.deltaTime, player.rb.velocity.y);
+        player.rb.velocity = new Vector2(xVelocity * Time.fixedDeltaTime, player.rb.velocity.y);
 
         if (player.canJump && player.isGrounded)
         {
-            player.rb.velocity = new Vector2(player.rb.velocity.x, jumpForce * Time.deltaTime);
+            player.rb.velocity = new Vector2(player.rb.velocity.x, jumpForce * Time.fixedDeltaTime);
             player.isGrounded = false;
             player.canJump = false;
         }
@@ -42,7 +44,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovementValues()
     {
-        xVelocity = Mathf.MoveTowards(xVelocity, player.horizontalInput * speed, Time.deltaTime * speed * speedMultiplier);
+        if(player.isGrounded)
+            xVelocity = Mathf.MoveTowards(xVelocity, player.horizontalInput * speed, Time.deltaTime * speed * groundedSpeedMultiplier);
+        else
+            xVelocity = Mathf.MoveTowards(xVelocity, player.horizontalInput * speed, Time.deltaTime * speed * airborneSpeedMultiplier);
 
         if (player.verticalInput > 0 && player.isGrounded)
         {

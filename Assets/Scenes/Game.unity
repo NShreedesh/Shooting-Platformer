@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 1577779106}
   - component: {fileID: 1577779104}
   - component: {fileID: 1577779105}
+  - component: {fileID: 1577779108}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -497,7 +498,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5fd8a6728cd9d41bf9775d37b8b64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xVelocity: 0
+  rb: {fileID: 0}
+  horizontalInput: 0
+  verticalInput: 0
   speed: 200
   speedMultiplier: 5
   jumpForce: 400
@@ -545,6 +548,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.107188284, y: -0.021437585}
   m_Size: {x: 0.5857507, y: 1.0428752}
   m_Direction: 0
+--- !u!114 &1577779108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577779101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d13eaee460489642aa8bc5312b4f1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 300
+  groundedSpeedMultiplier: 5
+  airborneSpeedMultiplier: 2
+  xVelocity: 0
+  jumpForce: 400
 --- !u!1 &1751864705
 GameObject:
   m_ObjectHideFlags: 0
