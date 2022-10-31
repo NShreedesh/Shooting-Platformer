@@ -210,7 +210,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -251,6 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684984078}
   - component: {fileID: 684984077}
+  - component: {fileID: 684984079}
   m_Layer: 0
   m_Name: Gfx
   m_TagString: Untagged
@@ -299,12 +300,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 937392651, guid: 228cbf7bbbedc7c47ba76d0ca7a166ca, type: 3}
+  m_Sprite: {fileID: -1510757870, guid: 115ac596641a28c449f13d8e9c2a89fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.875, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -325,6 +326,26 @@ Transform:
   m_Father: {fileID: 1577779103}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &684984079
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684984076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ca1d09e15b9fe443aa318c361b7fced, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1116880782
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +471,7 @@ GameObject:
   - component: {fileID: 1577779104}
   - component: {fileID: 1577779105}
   - component: {fileID: 1577779108}
+  - component: {fileID: 1577779109}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -501,16 +523,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   horizontalInput: 0
   verticalInput: 0
-  speed: 200
-  speedMultiplier: 5
-  jumpForce: 400
+  xVelocity: 0
   canJump: 0
   isGrounded: 0
   groundCheckPoint: {fileID: 2140073604}
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  radius: 0.2
+  radius: 0.12
 --- !u!50 &1577779106
 Rigidbody2D:
   serializedVersion: 4
@@ -545,8 +565,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.107188284, y: -0.021437585}
-  m_Size: {x: 0.5857507, y: 1.0428752}
+  m_Offset: {x: -0.13200265, y: 0.0077804327}
+  m_Size: {x: 0.3805803, y: 0.9778352}
   m_Direction: 0
 --- !u!114 &1577779108
 MonoBehaviour:
@@ -563,8 +583,19 @@ MonoBehaviour:
   speed: 300
   groundedSpeedMultiplier: 5
   airborneSpeedMultiplier: 2
-  xVelocity: 0
   jumpForce: 400
+--- !u!114 &1577779109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577779101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619b675f1529e0141a2b32a9e1cc5238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1751864705
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140073603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.111, y: -0.36, z: 0}
+  m_LocalPosition: {x: -0.107, y: -0.382, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public float verticalInput;
 
+    [Header("Movement")]
+    public float xVelocity;
+
     [Header("Jump")]
     public bool canJump;
     public bool isGrounded;
