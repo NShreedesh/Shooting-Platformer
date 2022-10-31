@@ -13,6 +13,8 @@ public class PlayerAnimation : MonoBehaviour
     private int JumpHash => Animator.StringToHash(Jump);
     private const string Velocity = "velocity";
     private int VelocityHash => Animator.StringToHash(Velocity);
+    private const string Crouch = "crouch";
+    private int CrouchHash => Animator.StringToHash(Crouch);
 
     private void Awake()
     {
@@ -22,7 +24,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
-        anim.SetBool(JumpHash, !player.isGrounded);
         anim.SetFloat(VelocityHash, Mathf.Abs(player.xVelocity));
+        anim.SetBool(JumpHash, !player.isGrounded);
+        anim.SetBool(CrouchHash, player.isCrouching);
     }
 }

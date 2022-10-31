@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public float horizontalInput;
     [HideInInspector]
-    public float verticalInput;
+    public float jumpInput;
+    [HideInInspector]
+    public float crouchInput;
 
     [Header("Movement")]
     public float xVelocity;
@@ -24,6 +26,9 @@ public class Player : MonoBehaviour
     [Header("Jump")]
     public bool canJump;
     public bool isGrounded;
+
+    [Header("Crouch")]
+    public bool isCrouching;
 
     [Header("Raycasting")]
     [SerializeField]
@@ -45,11 +50,11 @@ public class Player : MonoBehaviour
         PlayerInput();
     }
 
-
     private void PlayerInput()
     {
         horizontalInput = inputManager.PlayerAction.Movement.ReadValue<float>();
-        verticalInput = inputManager.PlayerAction.Jump.ReadValue<float>();
+        jumpInput = inputManager.PlayerAction.Jump.ReadValue<float>();
+        crouchInput = inputManager.PlayerAction.Crouch.ReadValue<float>();
     }
 
     private bool IsGrounded()
