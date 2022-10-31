@@ -58,9 +58,11 @@ public class Player : MonoBehaviour
         return hitInfo != null;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (groundCheckPoint == null) return;
         Gizmos.DrawWireSphere(groundCheckPoint.position, radius);
     }
+#endif
 }
