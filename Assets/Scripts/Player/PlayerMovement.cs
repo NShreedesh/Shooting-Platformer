@@ -26,13 +26,22 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         MovementValues();
-        Flip();
     }
 
     private void FixedUpdate()
     {
-        player.rb.velocity = new Vector2(player.xVelocity * Time.fixedDeltaTime, player.rb.velocity.y);
+        SideMovement();
+        Jump();
+    }
 
+    private void SideMovement()
+    {
+        player.rb.velocity = new Vector2(player.xVelocity * Time.fixedDeltaTime, player.rb.velocity.y);
+        Flip();
+    }
+
+    private void Jump()
+    {
         if (player.canJump && player.isGrounded)
         {
             player.rb.velocity = new Vector2(player.rb.velocity.x, jumpForce * Time.fixedDeltaTime);

@@ -20,11 +20,6 @@ public class PlayerAnimation : MonoBehaviour
         player = GetComponent<Player>();
     }
 
-    private void Start()
-    {
-        print(JumpHash);
-    }
-
     private void Update()
     {
         anim.SetBool(JumpHash, !player.isGrounded);
