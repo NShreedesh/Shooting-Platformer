@@ -2,7 +2,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(InputManager))]
 public class Player : MonoBehaviour
 {
     [Header("Scripts")]
