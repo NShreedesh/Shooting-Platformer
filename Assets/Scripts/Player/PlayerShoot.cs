@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -10,6 +12,16 @@ public class PlayerShoot : MonoBehaviour
     [Header("Inputs")]
     [SerializeField]
     private float shootInput;
+
+    [Header("Shooting")]
+    [SerializeField]
+    private BulletPool bulletPool;
+    [SerializeField]
+    private GameObject muzzleFlash;
+    [SerializeField]
+    private Transform shootPoint;
+    [SerializeField]
+    private Transform crosshairTransform;
 
     [Header("Shoot Time")]
     [SerializeField]
@@ -27,16 +39,16 @@ public class PlayerShoot : MonoBehaviour
     private void Update()
     {
         ReadInput();
-        Shoot();
+        CheckShooting();
     }
 
-    private void Shoot()
+    private void CheckShooting()
     {
         if (shootInput > 0)
         {
             if (canShoot)
             {
-                print("pew pew");
+                Shoot();
                 shootTime = 0;
                 canShoot = false;
             }
@@ -53,6 +65,25 @@ public class PlayerShoot : MonoBehaviour
             shootTime = 0;
             canShoot = true;
         }
+    }
+
+    private void Shoot()
+    {
+        Vector2 dir = shootPoint.position - crosshairTransform.position;
+        dir = dir.normalized;
+
+        Bullet bullet = bulletPool.Pool.Get();
+        bullet.transform.position = shootPoint.transform.position;
+        bullet.Shoot(dir);
+
+        muzzleFlash.SetActive(true);
+        StartCoroutine(DisableMuzzleFlash());
+    }
+
+    private IEnumerator DisableMuzzleFlash()
+    {
+        yield return new WaitForSeconds(0.1f);
+        muzzleFlash.SetActive(false);
     }
 
     private void ReadInput()
