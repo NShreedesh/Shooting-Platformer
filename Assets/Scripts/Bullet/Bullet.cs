@@ -31,6 +31,6 @@ public class Bullet : MonoBehaviour
 
     public void Shoot(Vector2 dir)
     {
-        rb.velocity = -dir * speed;
+        rb.velocity = dir * speed;
     }
 }

@@ -450,6 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 8567844}
+  player: {fileID: 1577779103}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

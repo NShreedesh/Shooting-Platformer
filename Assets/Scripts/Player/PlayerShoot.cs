@@ -69,7 +69,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        Vector2 dir = shootPoint.position - crosshairTransform.position;
+        Vector2 dir = crosshairTransform.position - shootPoint.position;
         dir = dir.normalized;
 
         Bullet bullet = bulletPool.Pool.Get();
