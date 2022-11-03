@@ -24,6 +24,16 @@ public class Bullet : MonoBehaviour
         Invoke(nameof(DisableBullet), 1);
     }
 
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DisableBullet();
+    }
+
     private void DisableBullet()
     {
         returnToPool.Return(this);

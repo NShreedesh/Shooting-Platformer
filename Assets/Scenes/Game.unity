@@ -450,7 +450,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 8567844}
-  player: {fileID: 1577779103}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +906,7 @@ MonoBehaviour:
   shootPoint: {fileID: 1236139657}
   crosshairTransform: {fileID: 467860218}
   shootTime: 0
-  shootDelayTime: 0.3
+  shootDelayTime: 0.2
   canShoot: 1
 --- !u!1 &1713862207 stripped
 GameObject:
