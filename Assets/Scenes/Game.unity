@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d13eaee460489642aa8bc5312b4f1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crossHair: {fileID: 467860220}
   speed: 300
   crouchSpeed: 100
   runSpeed: 300

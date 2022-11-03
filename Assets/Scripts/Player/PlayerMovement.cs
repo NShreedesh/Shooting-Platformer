@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Scripts")]
     private Player player;
 
+    [Header("Other Scripts")]
+    [SerializeField]
+    private Crosshair crossHair;
+
     [Header("Components")]
     private CapsuleCollider2D playerCollider;
 
@@ -118,13 +122,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (player.xVelocity > 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (player.xVelocity < 0)
+        Vector2 turnDirection = crossHair.transform.position - transform.position;
+
+        if(turnDirection.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }

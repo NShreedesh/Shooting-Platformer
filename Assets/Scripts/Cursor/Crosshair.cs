@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CursorMovement : MonoBehaviour
+public class Crosshair : MonoBehaviour
 {
     private Camera cam;
     [SerializeField]
