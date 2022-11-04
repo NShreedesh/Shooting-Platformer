@@ -429,7 +429,6 @@ GameObject:
   - component: {fileID: 431766364}
   - component: {fileID: 431766363}
   - component: {fileID: 431766362}
-  - component: {fileID: 431766361}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -437,27 +436,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &431766361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431766359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dc16ad409adef41997ff69b24b140c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 8567844}
-  shootInput: 0
-  bulletPool: {fileID: 1322401215}
-  muzzleFlash: {fileID: 1738186782}
-  shootPoint: {fileID: 538934487}
-  crosshairTransform: {fileID: 467860218}
-  shootTime: 0
-  shootDelayTime: 0.2
-  canShoot: 1
 --- !u!114 &431766362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 431766359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 316482277}
@@ -740,7 +718,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4716981, g: 0.3671235, b: 0.3671235, a: 0}
+  m_BackGroundColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -831,6 +809,7 @@ GameObject:
   - component: {fileID: 648051446}
   - component: {fileID: 648051447}
   - component: {fileID: 648051448}
+  - component: {fileID: 648051449}
   m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
@@ -919,6 +898,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 467860218}
+--- !u!114 &648051449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648051445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dc16ad409adef41997ff69b24b140c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 8567844}
+  shootInput: 0
+  bulletPool: {fileID: 1322401215}
+  muzzleFlash: {fileID: 1738186782}
+  shootPoint: {fileID: 538934487}
+  crosshairTransform: {fileID: 467860218}
+  shootTime: 0
+  shootDelayTime: 0.11
+  canShoot: 1
 --- !u!1 &1322401213
 GameObject:
   m_ObjectHideFlags: 0
