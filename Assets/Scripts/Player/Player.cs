@@ -31,8 +31,7 @@ public class Player : MonoBehaviour
     public bool isCrouching;
 
     [Header("Raycasting")]
-    [SerializeField]
-    private Transform groundCheckPoint;
+    public Transform groundCheckPoint;
     [SerializeField]
     private LayerMask groundMask;
     [SerializeField]

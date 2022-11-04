@@ -31,20 +31,24 @@ public class PlayerMovement : MonoBehaviour
     private float jumpForce = 400;
 
     [Header("Crouch")]
-    private float standColliderYOffset;
-    private float standColliderYSize;
+    private Vector2 standColliderOffset;
+    private Vector2 standColliderSize;
+    private Vector2 standGroundCheckPosition;
     [SerializeField]
-    private float crouchColliderYOffset = -0.17f;
+    private Vector2 crouchColliderOffset = new Vector2(0, -0.4f);
     [SerializeField]
-    private float crouchColliderYSize = 0.58f;
+    private Vector2 crouchColliderSize = new Vector2(0.5f, 0.5f);
+    [SerializeField]
+    private Vector2 crouchGroundCheckPosition = new Vector2(0, 0.2f);
 
     private void Awake()
     {
         player = GetComponent<Player>();
         playerCollider = GetComponent<CapsuleCollider2D>();
 
-        standColliderYOffset = playerCollider.offset.y;
-        standColliderYSize = playerCollider.size.y;
+        standColliderOffset = playerCollider.offset;
+        standColliderSize = playerCollider.size;
+        standGroundCheckPosition = player.groundCheckPoint.localPosition;
     }
 
     private void Update()
@@ -80,14 +84,16 @@ public class PlayerMovement : MonoBehaviour
         if(player.isCrouching)
         {
             speed = crouchSpeed;
-            playerCollider.offset = new Vector2(playerCollider.offset.x, crouchColliderYOffset); 
-            playerCollider.size = new Vector2(playerCollider.size.x, crouchColliderYSize); 
+            playerCollider.offset = standColliderOffset + crouchColliderOffset;
+            playerCollider.size = standColliderSize - crouchColliderSize;
+            player.groundCheckPoint.localPosition = standGroundCheckPosition - crouchGroundCheckPosition;
         }
         else
         {
             speed = runSpeed;
-            playerCollider.offset = new Vector2(playerCollider.offset.x, standColliderYOffset);
-            playerCollider.size = new Vector2(playerCollider.size.x, standColliderYSize);
+            playerCollider.offset = standColliderOffset;
+            playerCollider.size = standColliderSize;
+            player.groundCheckPoint.localPosition = standGroundCheckPosition;
         }
     }
 
