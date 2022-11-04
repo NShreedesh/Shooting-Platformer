@@ -768,6 +768,7 @@ GameObject:
   - component: {fileID: 1577779108}
   - component: {fileID: 1577779109}
   - component: {fileID: 1577779110}
+  - component: {fileID: 1577779111}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -909,6 +910,20 @@ MonoBehaviour:
   shootTime: 0
   shootDelayTime: 0.2
   canShoot: 1
+--- !u!114 &1577779111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577779101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c3e322a2235d84da3a4c9eb0b5ffa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 467860218}
+  speed: 1200
 --- !u!1 &1713862207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9115001524655028475, guid: 5b0caffba073b834a83eb9fc58745ab8, type: 3}
