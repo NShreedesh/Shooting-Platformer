@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -20,8 +19,6 @@ public class PlayerShoot : MonoBehaviour
     private GameObject muzzleFlash;
     [SerializeField]
     private Transform shootPoint;
-    [SerializeField]
-    private Transform crosshairTransform;
 
     [Header("Shoot Time")]
     [SerializeField]
@@ -69,12 +66,9 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        Vector2 dir = crosshairTransform.position - shootPoint.position;
-        dir = dir.normalized;
-
         Bullet bullet = bulletPool.Pool.Get();
         bullet.transform.position = shootPoint.transform.position;
-        bullet.Shoot(dir);
+        bullet.Shoot(transform.right);
 
         muzzleFlash.SetActive(true);
         StartCoroutine(DisableMuzzleFlash());
