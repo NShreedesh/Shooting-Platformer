@@ -1182,7 +1182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052746146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.06, y: -2.04, z: 0}
+  m_LocalPosition: {x: 1.1, y: -2.04, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 578088947}
   shootPoint: {fileID: 2136213727}
   shootTime: 0
-  shootDelayTime: 0.06
+  shootDelayTime: 0.5
   canShoot: 1
 --- !u!212 &2052746150
 SpriteRenderer:
@@ -1256,7 +1256,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.66, y: 6.2}
+  m_Size: {x: 7.64, y: 4.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1286,7 +1286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136213726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.53, y: 0.56, z: 0}
+  m_LocalPosition: {x: 7.35, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
