@@ -330,8 +330,8 @@ MonoBehaviour:
   groundedSpeedMultiplier: 4
   airborneSpeedMultiplier: 1.2
   jumpForce: 450
-  crouchColliderOffset: {x: 0, y: -0.4}
-  crouchColliderSize: {x: 0.5, y: 0.5}
+  crouchColliderOffset: {x: 0, y: 0}
+  crouchColliderSize: {x: 0, y: 2}
   crouchGroundCheckPosition: {x: 0, y: 0.2}
 --- !u!114 &61323390
 MonoBehaviour:
@@ -461,7 +461,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 467860218}
-  rotatePoint: {fileID: 430158706}
 --- !u!1 &467860217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1207,6 @@ MonoBehaviour:
   bulletPool: {fileID: 1322401215}
   muzzleFlash: {fileID: 578088947}
   shootPoint: {fileID: 2136213727}
-  crosshairTransform: {fileID: 467860218}
   shootTime: 0
   shootDelayTime: 0.06
   canShoot: 1
