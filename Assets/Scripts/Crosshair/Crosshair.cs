@@ -2,14 +2,10 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
+    [SerializeField]
     private Camera cam;
     [SerializeField]
     private InputManager inputManager;
-
-    private void Awake()
-    {
-        cam = Camera.main;
-    }
 
     private void Start()
     {

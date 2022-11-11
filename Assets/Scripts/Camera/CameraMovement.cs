@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -8,38 +7,36 @@ public class CameraMovement : MonoBehaviour
     private InputManager inputManager;
     [SerializeField]
     private Player player;
-
-    [Header("Input Values")]
     [SerializeField]
-    private Vector2 delta;
+    private Crosshair crosshair;
 
     [Header("Sensitivity Values")]
     [SerializeField]
-    private float xSenesitivity;
-    [SerializeField]
-    private float ySenesitivity;
+    private float cameraSpeed = 40;
 
-    private void Update()
-    {
-        ReadInput();
-    }
+    [Header("Sensitivity Values")]
+    [SerializeField]
+    private float minXOffset;
+    [SerializeField]
+    private float maxXOffset;
+    [SerializeField]
+    private float minYOffset;
+    [SerializeField]
+    private float maxYOffset;
+
 
     private void LateUpdate()
     {
         MoveCameraToCursor();
     }
 
-    private void ReadInput()
-    {
-        delta = inputManager.MouseAction.Delta.ReadValue<Vector2>();
-    }
-
     private void MoveCameraToCursor()
     {
         Vector3 camPosition = transform.position;
-        camPosition += new Vector3(delta.x * xSenesitivity * Time.deltaTime, delta.y * ySenesitivity * Time.deltaTime, 0);
-        camPosition.x = Mathf.Clamp(camPosition.x, player.transform.position.x - 5, player.transform.position.x + 5);
-        camPosition.y = Mathf.Clamp(camPosition.y, player.transform.position.y - 3, player.transform.position.y + 3);
+        camPosition = Vector3.MoveTowards(camPosition, crosshair.transform.position, Time.deltaTime * cameraSpeed);
+        camPosition.x = Mathf.Clamp(camPosition.x, player.transform.position.x - minXOffset, player.transform.position.x + maxXOffset);
+        camPosition.y = Mathf.Clamp(camPosition.y, player.transform.position.y - minYOffset, player.transform.position.y + maxYOffset);
+        camPosition.z = -10;
         transform.position = camPosition;
     }
 }
