@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class CameraMovementToCrosshair : MonoBehaviour
 {
     [Header("Other Scripts")]
     [SerializeField]
