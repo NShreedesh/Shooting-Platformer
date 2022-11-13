@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [Header("Scripts")]
-    private Player player;
     [SerializeField]
     private InputManager inputManager;
 
@@ -27,11 +26,6 @@ public class PlayerShoot : MonoBehaviour
     private float shootDelayTime = 0.3f;
     [SerializeField]
     private bool canShoot = true;
-
-    private void Awake()
-    {
-        player = GetComponent<Player>();
-    }
 
     private void Update()
     {

@@ -13,7 +13,7 @@ public class Crosshair : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 cursorPosition = cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>());
         cursorPosition.z = 0;
