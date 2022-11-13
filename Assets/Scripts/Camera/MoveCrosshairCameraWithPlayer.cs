@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MoveCrosshairCameraWithPlayer : MonoBehaviour
 {
@@ -7,10 +6,9 @@ public class MoveCrosshairCameraWithPlayer : MonoBehaviour
     [SerializeField]
     private Player player;
 
-    private void LateUpdate()
+    private void Update()
     {
-        Vector3 cameraPosition = transform.position;
-        cameraPosition = player.transform.localPosition;
+        Vector3 cameraPosition = player.transform.localPosition;
         cameraPosition.z = -10;
         transform.position = cameraPosition;
     }

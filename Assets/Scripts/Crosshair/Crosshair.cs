@@ -15,8 +15,8 @@ public class Crosshair : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 cursorPosition = cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>());
-        cursorPosition.z = 0;
-        transform.position = cursorPosition;
+        Vector3 crosshairPosition = cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>());
+        crosshairPosition.z = 0;
+        transform.position = crosshairPosition;
     }
 }
