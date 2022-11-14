@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27221f35217a8140b15cf7533d20a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <IsPicked>k__BackingField: 0
+  boxCollider: {fileID: 2874023866894958113}
 --- !u!1001 &648738433459764415
 PrefabInstance:
   m_ObjectHideFlags: 0

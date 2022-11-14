@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
@@ -16,6 +17,8 @@ public class Pickup : MonoBehaviour
     [SerializeField]
     private float pickInput;
 
+    Collider2D[] c;
+
     private void Update()
     {
         PickItems();
@@ -23,21 +26,21 @@ public class Pickup : MonoBehaviour
 
     private void PickItems()
     {
-        IPickable pickItem = null;
+        
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, pickupLayer);
-        if (colliders == null) return;
-        foreach (Collider2D collider in colliders)
-        {
-            collider.TryGetComponent<IPickable>(out pickItem);
-            if(!pickItem.IsPicked)
+        if (colliders.Length == 0) return;
+        colliders = colliders.OrderBy(d => Vector2.Distance(d.transform.position, transform.position))
+            .Where(d =>
             {
-                break;
-            }
-        }
+                d.TryGetComponent<IPickable>(out IPickable pickItem);
+                if (!pickItem.IsPicked) return d;
+                return false;
+            })
+            .ToArray();
 
-        if (pickItem == null) return;
-        if(inputManager.PlayerAction.Pick.WasPressedThisFrame())
+        if (inputManager.PlayerAction.Pick.WasPressedThisFrame())
         {
+            colliders[0].TryGetComponent<IPickable>(out IPickable pickItem);
             pickItem.Pick();
         }
     }
