@@ -62,6 +62,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pick"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7854ec7-c1bc-41ff-8caf-978154b1d673"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -130,6 +139,17 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5a63079-110e-4e4b-bb32-a892733f6783"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -190,6 +210,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Pick = m_Player.FindAction("Pick", throwIfNotFound: true);
         // Mouse
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
         m_Mouse_Position = m_Mouse.FindAction("Position", throwIfNotFound: true);
@@ -257,6 +278,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_Pick;
     public struct PlayerActions
     {
         private @Input m_Wrapper;
@@ -265,6 +287,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @Pick => m_Wrapper.m_Player_Pick;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -286,6 +309,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Pick.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPick;
+                @Pick.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPick;
+                @Pick.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPick;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -302,6 +328,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Pick.started += instance.OnPick;
+                @Pick.performed += instance.OnPick;
+                @Pick.canceled += instance.OnPick;
             }
         }
     }
@@ -353,6 +382,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnPick(InputAction.CallbackContext context);
     }
     public interface IMouseActions
     {

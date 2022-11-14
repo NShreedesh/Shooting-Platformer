@@ -62,7 +62,7 @@ public class PlayerShoot : MonoBehaviour
     {
         Bullet bullet = bulletPool.Pool.Get();
         bullet.transform.position = shootPoint.transform.position;
-        bullet.Shoot(transform.right);
+        bullet.Shoot(shootPoint.transform.right);
 
         muzzleFlash.SetActive(true);
         StartCoroutine(DisableMuzzleFlash());
