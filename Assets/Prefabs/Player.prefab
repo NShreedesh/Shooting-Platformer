@@ -169,10 +169,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98127745dcc5b840a6f44b031cf47a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
   radius: 1.5
   pickupLayer:
     serializedVersion: 2
     m_Bits: 512
+  pickInput: 0
 --- !u!1 &2269755079396758892
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +590,10 @@ PrefabInstance:
     - target: {fileID: 648738434938943725, guid: 3a2ee5318e1a1e44da0cb1e093cda447, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733136030471068435, guid: 3a2ee5318e1a1e44da0cb1e093cda447, type: 3}
+      propertyPath: <IsPicked>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a2ee5318e1a1e44da0cb1e093cda447, type: 3}

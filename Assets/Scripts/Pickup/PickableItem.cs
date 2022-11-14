@@ -11,9 +11,4 @@ public class PickableItem : MonoBehaviour, IPickable
         IsPicked = true;
         print("Picked an Item");
     }
-
-    public void ReverseIsPicked()
-    {
-        IsPicked = !IsPicked;
-    }
 }

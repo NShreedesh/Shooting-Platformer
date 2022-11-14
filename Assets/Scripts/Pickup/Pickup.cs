@@ -18,13 +18,7 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
-        ReadInput();
         PickItems();
-    }
-
-    private void ReadInput()
-    {
-        pickInput = inputManager.PlayerAction.Pick.ReadValue<float>();
     }
 
     private void PickItems()
@@ -34,14 +28,15 @@ public class Pickup : MonoBehaviour
         if (colliders == null) return;
         foreach (Collider2D collider in colliders)
         {
-            collider.TryGetComponent(out pickItem);
+            collider.TryGetComponent<IPickable>(out pickItem);
             if(!pickItem.IsPicked)
             {
                 break;
             }
         }
 
-        if(pickInput == 1)
+        if (pickItem == null) return;
+        if(inputManager.PlayerAction.Pick.WasPressedThisFrame())
         {
             pickItem.Pick();
         }
