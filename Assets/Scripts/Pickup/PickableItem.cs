@@ -19,7 +19,7 @@ public class PickableItem : MonoBehaviour, IPickable
 
         IsPicked = true; 
         ToggleCollider();
-        print("Picked an Item");
+        Destroy(gameObject);
     }
 
     private void ToggleCollider()
