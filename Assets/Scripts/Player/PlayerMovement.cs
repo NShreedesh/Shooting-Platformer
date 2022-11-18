@@ -10,8 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Other Scripts")]
     [SerializeField]
     private Crosshair crossHair;
+    [SerializeField]
+    private InputManager inputManager;
 
     [Header("Components")]
+    [SerializeField]
+    private Camera cam;
     private CapsuleCollider2D playerCollider;
 
     [Header("Movement")]
@@ -128,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        Vector2 turnDirection = crossHair.transform.position - transform.position;
+        Vector2 turnDirection = cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>()) - transform.position;
 
         if(turnDirection.x < 0)
         {

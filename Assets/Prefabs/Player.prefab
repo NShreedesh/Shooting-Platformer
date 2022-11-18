@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossHair: {fileID: 0}
+  inputManager: {fileID: 0}
+  cam: {fileID: 0}
   speed: 300
   crouchSpeed: 100
   runSpeed: 300
@@ -306,7 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c3e322a2235d84da3a4c9eb0b5ffa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  cam: {fileID: 0}
+  inputManager: {fileID: 0}
 --- !u!1 &2269755080317117575
 GameObject:
   m_ObjectHideFlags: 0

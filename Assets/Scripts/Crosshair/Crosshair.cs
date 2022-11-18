@@ -3,20 +3,11 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     [SerializeField]
-    private Camera cam;
-    [SerializeField]
-    private InputManager inputManager;
+    private Texture2D cursorTexture;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
-    }
-
-    private void LateUpdate()
-    {
-        Vector3 crosshairPosition = cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>());
-        crosshairPosition.z = 0;
-        transform.position = crosshairPosition;
+        Cursor.SetCursor(cursorTexture, new Vector2(0, 0), CursorMode.ForceSoftware);
     }
 }
