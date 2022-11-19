@@ -23,6 +23,12 @@ public class CameraMovementToCrosshair : MonoBehaviour
     [Header("Camera Movement")]
     [SerializeField]
     private float cameraSpeed = 10;
+    private Vector3 cameraGotoPosition;
+
+    private void Start()
+    {
+        inputManager.MouseAction.Position.performed += ctx => cameraGotoPosition = cam.ScreenToWorldPoint(ctx.ReadValue<Vector2>());
+    }
 
     private void FixedUpdate()
     {
@@ -31,10 +37,9 @@ public class CameraMovementToCrosshair : MonoBehaviour
 
     private void MoveCameraToCursor()
     {
-        Vector3 camPosition = cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>());
-        camPosition.x = Mathf.Clamp(camPosition.x, player.transform.position.x - minXOffset, player.transform.position.x + maxXOffset);
-        camPosition.y = Mathf.Clamp(camPosition.y, player.transform.position.y - minYOffset, player.transform.position.y + maxYOffset);
-        camPosition.z = -10;
-        transform.position = Vector3.MoveTowards(transform.position, camPosition, cameraSpeed * Time.deltaTime);
+        cameraGotoPosition.x = Mathf.Clamp(cameraGotoPosition.x, player.transform.position.x - minXOffset, player.transform.position.x + maxXOffset);
+        cameraGotoPosition.y = Mathf.Clamp(cameraGotoPosition.y, player.transform.position.y - minYOffset, player.transform.position.y + maxYOffset);
+        cameraGotoPosition.z = -10;
+        transform.position = Vector3.MoveTowards(transform.position, cameraGotoPosition, cameraSpeed * Time.deltaTime);
     }
 }
