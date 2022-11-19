@@ -32,14 +32,6 @@ public class CameraMovementToCrosshair : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(player.rb.velocity.x > 2)
-        {
-            cameraGotoPosition += player.transform.position;
-        }
-        else if (player.rb.velocity.x < -2)
-        {
-            cameraGotoPosition -= player.transform.position;
-        }
         MoveCameraToCursor();
     }
 
