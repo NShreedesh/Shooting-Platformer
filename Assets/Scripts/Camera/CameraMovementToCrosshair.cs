@@ -32,6 +32,14 @@ public class CameraMovementToCrosshair : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(player.rb.velocity.x > 2)
+        {
+            cameraGotoPosition += player.transform.position;
+        }
+        else if (player.rb.velocity.x < -2)
+        {
+            cameraGotoPosition -= player.transform.position;
+        }
         MoveCameraToCursor();
     }
 
@@ -40,6 +48,6 @@ public class CameraMovementToCrosshair : MonoBehaviour
         cameraGotoPosition.x = Mathf.Clamp(cameraGotoPosition.x, player.transform.position.x - minXOffset, player.transform.position.x + maxXOffset);
         cameraGotoPosition.y = Mathf.Clamp(cameraGotoPosition.y, player.transform.position.y - minYOffset, player.transform.position.y + maxYOffset);
         cameraGotoPosition.z = -10;
-        transform.position = Vector3.MoveTowards(transform.position, cameraGotoPosition, cameraSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, cameraGotoPosition, cameraSpeed * Time.deltaTime * Mathf.Abs(cameraGotoPosition.x - transform.position.x));
     }
 }

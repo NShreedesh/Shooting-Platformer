@@ -788,8 +788,7 @@ MonoBehaviour:
   maxXOffset: 5
   minYOffset: -2
   maxYOffset: 3
-  cameraSpeed: 5
-  cameraGotoPosition: {x: 0, y: 0, z: 0}
+  cameraSpeed: 2
 --- !u!4 &1040048741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 648738434938943725, guid: 3a2ee5318e1a1e44da0cb1e093cda447, type: 3}
