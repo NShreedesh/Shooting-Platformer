@@ -4215,6 +4215,10 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 8567844}
+    - target: {fileID: 61323395, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: shootDelayTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2269755079325613064, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: cam
       value: 
