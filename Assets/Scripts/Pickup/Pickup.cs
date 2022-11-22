@@ -6,6 +6,14 @@ public class Pickup : MonoBehaviour
     [Header("Input")]
     [SerializeField]
     private InputManager inputManager;
+    [SerializeField]
+    private BulletPool bulletPool;
+
+    [Header("PickUp Position")]
+    [SerializeField]
+    private Transform hand;
+    [SerializeField]
+    private Transform gun;
 
     [Header("Raycast Values")]
     [SerializeField]
@@ -16,8 +24,6 @@ public class Pickup : MonoBehaviour
     [Header("Input Values")]
     [SerializeField]
     private float pickInput;
-
-    Collider2D[] c;
 
     private void Update()
     {
@@ -41,6 +47,13 @@ public class Pickup : MonoBehaviour
         if (inputManager.PlayerAction.Pick.WasPressedThisFrame())
         {
             colliders[0].TryGetComponent<IPickable>(out IPickable pickItem);
+            Transform newGunTransform = colliders[0].transform;
+
+            newGunTransform.parent = hand;
+            newGunTransform.SetPositionAndRotation(gun.position, gun.rotation);
+            newGunTransform.localScale = gun.localScale;
+            Destroy(gun.gameObject);
+            gun = newGunTransform;
             pickItem.Pick();
         }
     }

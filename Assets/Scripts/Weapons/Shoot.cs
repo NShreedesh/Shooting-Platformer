@@ -1,23 +1,24 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class Shoot : MonoBehaviour
 {
     [Header("Scripts")]
     [SerializeField]
     private InputManager inputManager;
-
-    [Header("Inputs")]
-    [SerializeField]
-    private float shootInput;
-
-    [Header("Shooting")]
     [SerializeField]
     private BulletPool bulletPool;
+    [SerializeField]
+    private PickableItem pickable;
+
+    [Header("Shooting")]
     [SerializeField]
     private GameObject muzzleFlash;
     [SerializeField]
     private Transform shootPoint;
+
+    [Header("Inputs")]
+    private float shootInput;
 
     [Header("Shoot Time")]
     [SerializeField]
@@ -29,6 +30,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
+        if (!pickable.IsPicked) return;
         ReadInput();
         CheckShooting();
     }
@@ -39,7 +41,7 @@ public class PlayerShoot : MonoBehaviour
         {
             if (canShoot)
             {
-                Shoot();
+                Hit();
                 shootTime = 0;
                 canShoot = false;
             }
@@ -58,7 +60,7 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    private void Hit()
     {
         Bullet bullet = bulletPool.Pool.Get();
         bullet.transform.position = shootPoint.transform.position;

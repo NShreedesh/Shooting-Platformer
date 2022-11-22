@@ -19,7 +19,6 @@ public class PickableItem : MonoBehaviour, IPickable
 
         IsPicked = true; 
         ToggleCollider();
-        Destroy(gameObject);
     }
 
     private void ToggleCollider()
