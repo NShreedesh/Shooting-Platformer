@@ -767,30 +767,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
-    - target: {fileID: 2988578179942913793, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 1322401215}
-    - target: {fileID: 2988578179942913793, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 8567844}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
 --- !u!4 &1522189694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2409053875009346394, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
   m_PrefabInstance: {fileID: 1522189693}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1645277498 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2269755079426012935, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-  m_PrefabInstance: {fileID: 2269755079318881397}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1728846103 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2269755081092673494, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-  m_PrefabInstance: {fileID: 2269755079318881397}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1799432178
 GameObject:
@@ -4112,11 +4094,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1686870194307490701, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+    - target: {fileID: 1710448017, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1322401215}
-    - target: {fileID: 1686870194307490701, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+    - target: {fileID: 1710448017, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 8567844}
@@ -4185,14 +4167,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269755079325613303, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-      propertyPath: gun
-      value: 
-      objectReference: {fileID: 1728846103}
-    - target: {fileID: 2269755079325613303, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-      propertyPath: hand
-      value: 
-      objectReference: {fileID: 1645277498}
-    - target: {fileID: 2269755079325613303, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1322401215}
@@ -4208,10 +4182,6 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 8567844}
-    - target: {fileID: 2269755081092673495, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
 --- !u!1001 &8643288498542363229
@@ -4221,14 +4191,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1799432179}
     m_Modifications:
-    - target: {fileID: 8567206081565572044, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 1322401215}
-    - target: {fileID: 8567206081565572044, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 8567844}
     - target: {fileID: 9147911674026981270, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
       propertyPath: m_Name
       value: ShotGun

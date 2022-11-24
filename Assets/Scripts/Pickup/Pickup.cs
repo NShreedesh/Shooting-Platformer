@@ -11,6 +11,10 @@ public class Pickup : MonoBehaviour
 
     [Header("PickUp Position")]
     [SerializeField]
+    private Shoot shoot;
+
+    [Header("PickUp Position")]
+    [SerializeField]
     private Transform hand;
     [SerializeField]
     private Transform gun;
@@ -24,6 +28,12 @@ public class Pickup : MonoBehaviour
     [Header("Input Values")]
     [SerializeField]
     private float pickInput;
+
+    private void Start()
+    {
+        if(gun.TryGetComponent<Gun>(out Gun gunData))
+            shoot.Initialize(gunData.gunData, gunData.shootPoint, gunData.muzzleFlash);
+    }
 
     private void Update()
     {
@@ -54,6 +64,12 @@ public class Pickup : MonoBehaviour
             newGunTransform.localScale = gun.localScale;
             Destroy(gun.gameObject);
             gun = newGunTransform;
+
+            if(gun.TryGetComponent<Gun>(out Gun gunData))
+            {
+                shoot.Initialize(gunData.gunData, gunData.shootPoint, gunData.muzzleFlash);
+            }
+
             pickItem.Pick();
         }
     }

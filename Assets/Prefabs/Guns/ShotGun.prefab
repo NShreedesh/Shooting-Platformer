@@ -127,8 +127,7 @@ GameObject:
   - component: {fileID: 9147911674026981271}
   - component: {fileID: 9147911674026981266}
   - component: {fileID: 5769590933724066139}
-  - component: {fileID: 3917106089170031721}
-  - component: {fileID: 8567206081565572044}
+  - component: {fileID: -8409979508979167379}
   m_Layer: 9
   m_Name: ShotGun
   m_TagString: Untagged
@@ -230,7 +229,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.66, y: 6.2}
   m_EdgeRadius: 0
---- !u!114 &3917106089170031721
+--- !u!114 &-8409979508979167379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,28 +238,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9147911674026981270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27221f35217a8140b15cf7533d20a8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 993973c1506fe55449389806872b9f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <IsPicked>k__BackingField: 0
   boxCollider: {fileID: 5769590933724066139}
---- !u!114 &8567206081565572044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9147911674026981270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dc16ad409adef41997ff69b24b140c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  bulletPool: {fileID: 0}
-  pickable: {fileID: 3917106089170031721}
-  muzzleFlash: {fileID: 39710668925733694}
+  gunData: {fileID: 11400000, guid: 5268e448b4825924189cbff46075b857, type: 2}
   shootPoint: {fileID: 9147911673943201003}
-  shootTime: 0
-  shootDelayTime: 0.5
-  canShoot: 1
+  muzzleFlash: {fileID: 39710668925733694}

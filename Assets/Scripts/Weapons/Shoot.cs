@@ -12,9 +12,7 @@ public class Shoot : MonoBehaviour
     private PickableItem pickable;
 
     [Header("Shooting")]
-    [SerializeField]
     private GameObject muzzleFlash;
-    [SerializeField]
     private Transform shootPoint;
 
     [Header("Inputs")]
@@ -22,17 +20,23 @@ public class Shoot : MonoBehaviour
 
     [Header("Shoot Time")]
     [SerializeField]
-    private float shootTime;
-    [SerializeField]
-    private float shootDelayTime = 0.3f;
-    [SerializeField]
     private bool canShoot = true;
+    [SerializeField]
+    private float shootTime;
+    private GunScriptableObject gunData;
 
     private void Update()
     {
         if (!pickable.IsPicked) return;
         ReadInput();
         CheckShooting();
+    }
+
+    public void Initialize(GunScriptableObject gunData, Transform shootPoint, GameObject muzzleFlash)
+    {
+        this.gunData = gunData;
+        this.shootPoint = shootPoint;
+        this.muzzleFlash = muzzleFlash;
     }
 
     private void CheckShooting()
@@ -48,7 +52,7 @@ public class Shoot : MonoBehaviour
 
             shootTime += Time.deltaTime;
 
-            if (shootTime >= shootDelayTime)
+            if (shootTime >= gunData.shootDelayTime)
             {
                 canShoot = true;
             }
