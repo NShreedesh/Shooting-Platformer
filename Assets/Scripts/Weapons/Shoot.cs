@@ -8,8 +8,7 @@ public class Shoot : MonoBehaviour
     private InputManager inputManager;
     [SerializeField]
     private BulletPool bulletPool;
-    [SerializeField]
-    private PickableItem pickable;
+    private Gun gun;
 
     [Header("Shooting")]
     private GameObject muzzleFlash;
@@ -20,14 +19,10 @@ public class Shoot : MonoBehaviour
 
     [Header("Shoot Time")]
     [SerializeField]
-    private bool canShoot = true;
-    [SerializeField]
     private float shootTime;
-    private Gun gun;
 
     private void Update()
     {
-        if (!pickable.IsPicked) return;
         ReadInput();
         CheckShooting();
     }
@@ -37,28 +32,25 @@ public class Shoot : MonoBehaviour
         this.gun = gun;
         this.shootPoint = shootPoint;
         this.muzzleFlash = muzzleFlash;
+
+        shootTime = gun.shootDelayTime;
     }
 
     private void CheckShooting()
     {
         if (shootInput > 0)
         {
-            shootTime += Time.deltaTime;
+            shootTime -= Time.deltaTime;
 
-            if (shootTime >= gun.shootDelayTime)
-                canShoot = true;
-
-            if (canShoot)
+            if (shootTime <= 0)
             {
                 Hit();
-                shootTime = 0;
-                canShoot = false;
+                shootTime = gun.shootDelayTime;
             }
         }
-        else
+        else if(shootTime > 0)
         {
-            shootTime = 0;
-            canShoot = true;
+            shootTime -= Time.deltaTime;
         }
     }
 
