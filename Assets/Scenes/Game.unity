@@ -807,11 +807,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1860099900 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2269755081092673494, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-  m_PrefabInstance: {fileID: 2269755079318881397}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923826658
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,10 +4170,6 @@ PrefabInstance:
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1322401215}
-    - target: {fileID: 2269755079325613303, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-      propertyPath: currentGun
-      value: 
-      objectReference: {fileID: 1860099900}
     - target: {fileID: 2269755079325613303, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: inputManager
       value: 
