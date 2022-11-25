@@ -158,10 +158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <IsPicked>k__BackingField: 0
-  shootDelayTime: 0.3
+  shootDelayTime: 0.2
   shootPoint: {fileID: 648738434887965585}
   muzzleFlash: {fileID: 8610378622952784964}
-  gunType: 1
 --- !u!1001 &648738433459764415
 PrefabInstance:
   m_ObjectHideFlags: 0
