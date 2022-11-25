@@ -27,11 +27,11 @@ public class Shoot : MonoBehaviour
         CheckShooting();
     }
 
-    public void Initialize(Gun gun, Transform shootPoint, GameObject muzzleFlash)
+    public void Initialize(Gun gun)
     {
         this.gun = gun;
-        this.shootPoint = shootPoint;
-        this.muzzleFlash = muzzleFlash;
+        this.shootPoint = gun.shootPoint;
+        this.muzzleFlash = gun.muzzleFlash;
 
         shootTime = gun.shootDelayTime;
     }
