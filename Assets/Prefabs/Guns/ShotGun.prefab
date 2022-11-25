@@ -242,7 +242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <IsPicked>k__BackingField: 0
-  boxCollider: {fileID: 5769590933724066139}
-  gunData: {fileID: 11400000, guid: 5268e448b4825924189cbff46075b857, type: 2}
+  shootDelayTime: 0.5
   shootPoint: {fileID: 9147911673943201003}
   muzzleFlash: {fileID: 39710668925733694}

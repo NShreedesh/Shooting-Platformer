@@ -32,7 +32,7 @@ public class Pickup : MonoBehaviour
     private void Start()
     {
         if(gun.TryGetComponent<Gun>(out Gun gunData))
-            shoot.Initialize(gunData.gunData, gunData.shootPoint, gunData.muzzleFlash);
+            shoot.Initialize(gunData, gunData.shootPoint, gunData.muzzleFlash);
     }
 
     private void Update()
@@ -67,7 +67,7 @@ public class Pickup : MonoBehaviour
 
             if(gun.TryGetComponent<Gun>(out Gun gunData))
             {
-                shoot.Initialize(gunData.gunData, gunData.shootPoint, gunData.muzzleFlash);
+                shoot.Initialize(gunData, gunData.shootPoint, gunData.muzzleFlash);
             }
 
             pickItem.Pick();

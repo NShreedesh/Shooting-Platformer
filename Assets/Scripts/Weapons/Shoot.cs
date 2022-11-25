@@ -23,7 +23,7 @@ public class Shoot : MonoBehaviour
     private bool canShoot = true;
     [SerializeField]
     private float shootTime;
-    private GunScriptableObject gunData;
+    private Gun gun;
 
     private void Update()
     {
@@ -32,9 +32,9 @@ public class Shoot : MonoBehaviour
         CheckShooting();
     }
 
-    public void Initialize(GunScriptableObject gunData, Transform shootPoint, GameObject muzzleFlash)
+    public void Initialize(Gun gun, Transform shootPoint, GameObject muzzleFlash)
     {
-        this.gunData = gunData;
+        this.gun = gun;
         this.shootPoint = shootPoint;
         this.muzzleFlash = muzzleFlash;
     }
@@ -43,18 +43,16 @@ public class Shoot : MonoBehaviour
     {
         if (shootInput > 0)
         {
+            shootTime += Time.deltaTime;
+
+            if (shootTime >= gun.shootDelayTime)
+                canShoot = true;
+
             if (canShoot)
             {
                 Hit();
                 shootTime = 0;
                 canShoot = false;
-            }
-
-            shootTime += Time.deltaTime;
-
-            if (shootTime >= gunData.shootDelayTime)
-            {
-                canShoot = true;
             }
         }
         else
