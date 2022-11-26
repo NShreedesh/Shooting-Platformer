@@ -38,19 +38,18 @@ public class Shoot : MonoBehaviour
 
     private void CheckShooting()
     {
+        if (shootTime > 0)
+            shootTime -= Time.deltaTime;
+        else
+            shootTime = 0;
+
         if (shootInput > 0)
         {
-            shootTime -= Time.deltaTime;
-
             if (shootTime <= 0)
             {
                 Hit();
                 shootTime = gun.shootDelayTime;
             }
-        }
-        else if(shootTime > 0)
-        {
-            shootTime -= Time.deltaTime;
         }
     }
 

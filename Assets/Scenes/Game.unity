@@ -4829,6 +4829,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1710448017, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: gunRecoil
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710448017, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1322401215}
@@ -4913,9 +4917,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 2269755079426012934, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269755079426012934, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 8567844}
+    - target: {fileID: 2269755081092673491, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269755081092673491, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269755081092673491, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
 --- !u!1001 &8643288498542363229
