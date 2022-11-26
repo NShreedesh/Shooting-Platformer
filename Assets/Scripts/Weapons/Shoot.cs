@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private BulletPool bulletPool;
     private Gun gun;
+    private Recoil recoil;
 
     [Header("Shooting")]
     private GameObject muzzleFlash;
@@ -30,8 +31,9 @@ public class Shoot : MonoBehaviour
     public void Initialize(Gun gun)
     {
         this.gun = gun;
-        this.shootPoint = gun.shootPoint;
-        this.muzzleFlash = gun.muzzleFlash;
+        shootPoint = gun.shootPoint;
+        muzzleFlash = gun.muzzleFlash;
+        recoil = gun.recoil;
 
         shootTime = gun.shootDelayTime;
     }
@@ -47,9 +49,14 @@ public class Shoot : MonoBehaviour
         {
             if (shootTime <= 0)
             {
+                recoil.StartRecoil();
                 Hit();
                 shootTime = gun.shootDelayTime;
             }
+        }
+        else
+        {
+            recoil.StopRecoil();
         }
     }
 

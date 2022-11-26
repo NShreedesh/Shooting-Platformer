@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2409053875009346399}
   - component: {fileID: 1120535311233637782}
   - component: {fileID: 2363286630069537227}
+  - component: {fileID: -6716370432108881955}
   m_Layer: 9
   m_Name: Pistol
   m_TagString: Untagged
@@ -126,9 +127,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <IsPicked>k__BackingField: 0
-  shootDelayTime: 0.2
+  recoil: {fileID: 0}
+  shootDelayTime: 0.5
   shootPoint: {fileID: 2409053875093616678}
   muzzleFlash: {fileID: 6850063182815274995}
+--- !u!114 &-6716370432108881955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2409053875009346395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d504f188e6eec4cafe496073f81c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upRecoil: 0
+  recoilValue: 0
 --- !u!1 &2409053875093616679
 GameObject:
   m_ObjectHideFlags: 0

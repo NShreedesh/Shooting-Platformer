@@ -5,6 +5,10 @@ public class Gun : PickableItem
     [Header("Components")]
     private BoxCollider2D boxCollider;
 
+    [Header("Scripts")]
+    [HideInInspector]
+    public Recoil recoil;
+
     [Header("Data to be Given")]
     public float shootDelayTime = 0.3f;
     public Transform shootPoint;
@@ -13,6 +17,7 @@ public class Gun : PickableItem
     private void Start()
     {
         boxCollider= GetComponent<BoxCollider2D>();
+        recoil= GetComponent<Recoil>();
         ToggleCollider();
     }
 
