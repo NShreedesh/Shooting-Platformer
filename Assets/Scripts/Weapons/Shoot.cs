@@ -65,6 +65,7 @@ public class Shoot : MonoBehaviour
         Bullet bullet = bulletPool.Pool.Get();
         bullet.transform.position = shootPoint.transform.position;
         bullet.Shoot(shootPoint.transform.right);
+        bullet.transform.eulerAngles = gun.transform.eulerAngles;
 
         muzzleFlash.SetActive(true);
         StartCoroutine(DisableMuzzleFlash());
