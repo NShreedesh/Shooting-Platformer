@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsPicked>k__BackingField: 0
   recoil: {fileID: 0}
-  shootDelayTime: 0.5
+  shootDelayTime: 0.7
   shootPoint: {fileID: 2409053875093616678}
   muzzleFlash: {fileID: 6850063182815274995}
 --- !u!114 &-6716370432108881955

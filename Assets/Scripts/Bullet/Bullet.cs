@@ -30,6 +30,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.TryGetComponent(out IDamagable damagable))
+        {
+            damagable.Damage(1);
+        }
         DisableBullet();
     }
 
