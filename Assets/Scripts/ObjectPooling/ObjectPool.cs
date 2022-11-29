@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class BulletPool : MonoBehaviour
+public class ObjectPool : MonoBehaviour
 {
     [Header("Bullet")]
     public PoolObject prefab;

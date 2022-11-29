@@ -4678,6 +4678,7 @@ GameObject:
   - component: {fileID: 400002}
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
+  - component: {fileID: 5129858662231796287}
   m_Layer: 0
   m_Name: WFXMR_BImpact Wood NoCollision
   m_TagString: Untagged
@@ -4694,8 +4695,8 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 400004}
   - {fileID: 400000}
@@ -4712,7 +4713,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 2.5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -9390,6 +9391,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5129858662231796287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6af1bd5427fce74e91d1c6db2e67839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour
     [SerializeField]
     private InputManager inputManager;
     [SerializeField]
-    private BulletPool bulletPool;
+    private ObjectPool bulletPool;
 
     [Header("PickUp Position")]
     [SerializeField]

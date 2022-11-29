@@ -7,7 +7,9 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private InputManager inputManager;
     [SerializeField]
-    private BulletPool bulletPool;
+    private ObjectPool bulletPool;
+    [SerializeField]
+    private ObjectPool impactPool;
     private Gun gun;
     private Recoil recoil;
 
@@ -63,6 +65,7 @@ public class Shoot : MonoBehaviour
     private void Hit()
     {
         Bullet bullet = bulletPool.Pool.Get().GetComponent<Bullet>();
+        bullet.Initialize(impactPool);
         bullet.transform.position = shootPoint.transform.position;
         bullet.Shoot(shootPoint.transform.right);
         bullet.transform.eulerAngles = gun.transform.eulerAngles;
