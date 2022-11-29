@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    public ParticleSystem p;
+
     private void Awake()
     {
         returnToPool = GetComponent<ReturnToPool>();
