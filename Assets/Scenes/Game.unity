@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cca971a99ec01643978e866e479647c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: -8923797336694440375, guid: 8bdf63412b5988a41a91dcd01d3a85b3, type: 3}
+  prefab: {fileID: -4546226167988238728, guid: 8bdf63412b5988a41a91dcd01d3a85b3, type: 3}
   defaultCapacity: 10
   maxSize: 50
 --- !u!1001 &1522189693

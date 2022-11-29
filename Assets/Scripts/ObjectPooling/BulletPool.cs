@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 public class BulletPool : MonoBehaviour
 {
     [Header("Bullet")]
-    public Bullet bullet;
+    public PoolObject prefab;
 
 
     [Header("Object Pooling")]
@@ -12,11 +12,11 @@ public class BulletPool : MonoBehaviour
     private int defaultCapacity = 10;
     [SerializeField]
     private int maxSize = 50;
-    public IObjectPool<Bullet> Pool { get; private set; }
+    public IObjectPool<PoolObject> Pool { get; private set; }
 
     private void Awake()
     {
-        Pool = new ObjectPool<Bullet>(
+        Pool = new ObjectPool<PoolObject>(
                     CreatePooledItem,
                     OnTakeFromPool,
                     OnReleasedFromPool,
@@ -26,24 +26,24 @@ public class BulletPool : MonoBehaviour
                     maxSize);
     }
 
-    private Bullet CreatePooledItem()
+    private PoolObject CreatePooledItem()
     {
-        Bullet spawnedBullet = Instantiate(bullet, transform.position, Quaternion.identity, transform);
-        spawnedBullet.GetComponent<ReturnToPool>().Initialize(Pool);
+        PoolObject spawnedBullet = Instantiate(prefab, transform.position, Quaternion.identity, transform);
+        spawnedBullet.Initialize(Pool);
         return spawnedBullet;
     }
 
-    private void OnTakeFromPool(Bullet obj)
+    private void OnTakeFromPool(PoolObject obj)
     {
         obj.gameObject.SetActive(true);
     }
 
-    private void OnReleasedFromPool(Bullet obj)
+    private void OnReleasedFromPool(PoolObject obj)
     {
         obj.gameObject.SetActive(false);
     }
 
-    private void OnDestroyFromPool(Bullet obj)
+    private void OnDestroyFromPool(PoolObject obj)
     {
         Destroy(obj.gameObject);
     }

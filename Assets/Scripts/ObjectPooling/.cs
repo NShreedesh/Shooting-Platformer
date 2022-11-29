@@ -5,7 +5,7 @@ public class ReturnToPool : MonoBehaviour
 {
 
     [Header("ObjectPool")]
-    private IObjectPool<Bullet> bulletPool;
+    private PoolObject poolObject;
 
     public void Return(Bullet bullet)
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Scripts")]
-    private ReturnToPool returnToPool;
+    private PoolObject returnToPool;
 
     [Header("Components")]
     private Rigidbody2D rb;
@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-        returnToPool = GetComponent<ReturnToPool>();
+        returnToPool = GetComponent<PoolObject>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
 
     private void DisableBullet()
     {
-        returnToPool.Return(this);
+        returnToPool.Return();
     }
 
     public void Shoot(Vector2 dir)

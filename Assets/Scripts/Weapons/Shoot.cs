@@ -62,7 +62,7 @@ public class Shoot : MonoBehaviour
 
     private void Hit()
     {
-        Bullet bullet = bulletPool.Pool.Get();
+        Bullet bullet = bulletPool.Pool.Get().GetComponent<Bullet>();
         bullet.transform.position = shootPoint.transform.position;
         bullet.Shoot(shootPoint.transform.right);
         bullet.transform.eulerAngles = gun.transform.eulerAngles;
