@@ -14465,6 +14465,8 @@ GameObject:
   - component: {fileID: 400006}
   - component: {fileID: 19800006}
   - component: {fileID: 19900006}
+  - component: {fileID: -4096231615894920387}
+  - component: {fileID: 4074813853577015294}
   m_Layer: 0
   m_Name: WFXMR_ExplosiveSmoke
   m_TagString: Untagged
@@ -14502,7 +14504,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5.5
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -19210,9 +19212,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 427316457
+  m_SortingLayer: 3
+  m_SortingOrder: 3
   m_RenderMode: 3
   m_MeshDistribution: 0
   m_SortMode: 1
@@ -19243,6 +19245,30 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-4096231615894920387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6af1bd5427fce74e91d1c6db2e67839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4074813853577015294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9a5fa156af723458adc908179158c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100008
 GameObject:
   m_ObjectHideFlags: 0

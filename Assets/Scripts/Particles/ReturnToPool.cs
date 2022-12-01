@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ParticleEffect : MonoBehaviour
+public class ReturnToPool : MonoBehaviour
 {
     [Header("Scripts")]
     private PoolObject poolObject;
