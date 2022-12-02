@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 317436714}
   - component: {fileID: 317436715}
   m_Layer: 0
-  m_Name: Impact Pool
+  m_Name: Sand Impact Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,6 +741,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1035596134}
+  - component: {fileID: 1035596135}
   m_Layer: 0
   m_Name: Hit Impact Pools
   m_TagString: Untagged
@@ -761,9 +762,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 317436714}
+  - {fileID: 1104515401}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035596135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035596133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a21e7a350c484314db11b06618e49238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sandImpactPool: {fileID: 317436715}
+  barrelImpactPool: {fileID: 1104515402}
 --- !u!1 &1044444682
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +814,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1104515400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1104515401}
+  - component: {fileID: 1104515402}
+  m_Layer: 0
+  m_Name: Barrel Impact Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1104515401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104515400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1035596134}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1104515402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104515400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cca971a99ec01643978e866e479647c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2508250748516059852, guid: e74af37e539075d428c1f7bd8cdb781d, type: 3}
+  defaultCapacity: 10
+  maxSize: 20
 --- !u!1 &1110185806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1298,7 @@ GameObject:
   - component: {fileID: 1923826662}
   - component: {fileID: 1923826664}
   - component: {fileID: 1923826663}
+  - component: {fileID: 1923826665}
   m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
@@ -5349,6 +5413,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1923826665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923826658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234ff7acd14bd9649b1a1fe1b4e7589c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Tag>k__BackingField: 1
 --- !u!1 &1974533282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,6 +5497,10 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 8567844}
+    - target: {fileID: 1710448017, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: impactObjectPooler
+      value: 
+      objectReference: {fileID: 1035596135}
     - target: {fileID: 2269755079325613064, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: cam
       value: 

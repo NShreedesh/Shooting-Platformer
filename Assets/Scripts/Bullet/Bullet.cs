@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Scripts")]
-    private ObjectPool impactPool;
+    private ImpactObjectPooler impactObjectPooler;
     private PoolObject poolObject;
 
     [Header("Components")]
@@ -35,7 +35,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Impact();
+        if(collision.TryGetComponent(out ITaggable taggable))
+        {
+            Impact(taggable);
+        }
         if(collision.gameObject.TryGetComponent(out IDamagable damagable))
         {
             damagable.Damage(damageBarrel);
@@ -43,14 +46,15 @@ public class Bullet : MonoBehaviour
         DisableBullet();
     }
 
-    public void Initialize(ObjectPool impactPool)
+    public void Initialize(ImpactObjectPooler impactObjectPooler)
     {
-        this.impactPool = impactPool;
+        this.impactObjectPooler = impactObjectPooler;
     }
 
-    private void Impact()
+    private void Impact(ITaggable taggable)
     {
-        ParticleSystem impactParticle = impactPool.Pool.Get().GetComponent<ParticleSystem>();
+        ParticleSystem impactParticle = impactObjectPooler.GetPool(taggable.Tag)?.Pool.Get().GetComponent<ParticleSystem>();
+        if (impactParticle == null) return;
         impactParticle.gameObject.transform.position = transform.position;
         impactParticle.Play();
     }
