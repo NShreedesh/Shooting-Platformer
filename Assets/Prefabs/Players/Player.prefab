@@ -173,8 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 0}
-  bulletPool: {fileID: 0}
-  impactPool: {fileID: 0}
+  impactObjectPooler: {fileID: 0}
   shootTime: 0
 --- !u!1 &2269755079396758892
 GameObject:

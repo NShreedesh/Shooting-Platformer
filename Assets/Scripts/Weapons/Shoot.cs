@@ -6,9 +6,13 @@ public class Shoot : MonoBehaviour
     [Header("Scripts")]
     [SerializeField]
     private InputManager inputManager;
+
+    [Header("Object Pools")]
     [SerializeField]
     private ImpactObjectPooler impactObjectPooler;
     private ObjectPool bulletPool;
+
+    [Header("Gun Data")]
     private Gun gun;
     private Recoil recoil;
 
