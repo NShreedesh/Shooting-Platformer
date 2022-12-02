@@ -13,7 +13,9 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    public ParticleSystem p;
+    [Header("Damage Values")]
+    [SerializeField]
+    private int damageBarrel = 1;
 
     private void Awake()
     {
@@ -36,7 +38,7 @@ public class Bullet : MonoBehaviour
         Impact();
         if(collision.gameObject.TryGetComponent(out IDamagable damagable))
         {
-            damagable.Damage(1);
+            damagable.Damage(damageBarrel);
         }
         DisableBullet();
     }

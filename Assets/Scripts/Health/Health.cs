@@ -17,6 +17,6 @@ public class Health : MonoBehaviour, IDamagable
 
     public void DecreaseHealth(int amount)
     {
-        HealthAmount--;
+        HealthAmount -= amount;
     }
 }
