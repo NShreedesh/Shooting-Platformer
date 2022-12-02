@@ -163,6 +163,7 @@ MonoBehaviour:
   shootDelayTime: 0.1
   shootPoint: {fileID: 648738434887965585}
   muzzleFlash: {fileID: 8610378622952784964}
+  bullet: {fileID: -8923797336694440375, guid: 8bdf63412b5988a41a91dcd01d3a85b3, type: 3}
 --- !u!114 &1002594106779387604
 MonoBehaviour:
   m_ObjectHideFlags: 0

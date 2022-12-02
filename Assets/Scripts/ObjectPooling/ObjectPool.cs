@@ -6,7 +6,6 @@ public class ObjectPool : MonoBehaviour
     [Header("Bullet")]
     public PoolObject prefab;
 
-
     [Header("Object Pooling")]
     [SerializeField]
     private int defaultCapacity = 10;

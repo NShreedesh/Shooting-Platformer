@@ -13,6 +13,7 @@ public class Gun : PickableItem
     public float shootDelayTime = 0.3f;
     public Transform shootPoint;
     public GameObject muzzleFlash;
+    public ObjectPool bulletPool;
 
     private void Start()
     {

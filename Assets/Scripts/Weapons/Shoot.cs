@@ -7,9 +7,8 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private InputManager inputManager;
     [SerializeField]
-    private ObjectPool bulletPool;
-    [SerializeField]
     private ObjectPool impactPool;
+    private ObjectPool bulletPool;
     private Gun gun;
     private Recoil recoil;
 
@@ -38,6 +37,7 @@ public class Shoot : MonoBehaviour
         recoil = gun.recoil;
 
         shootTime = gun.shootDelayTime;
+        bulletPool = gun.bulletPool;
     }
 
     private void CheckShooting()
