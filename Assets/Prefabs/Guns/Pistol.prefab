@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 427316457
   m_SortingLayer: 3
-  m_SortingOrder: 2
+  m_SortingOrder: 11
   m_Sprite: {fileID: -1223197437, guid: 8b05e83d36249df438d580d659d7864f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   shootDelayTime: 0.7
   shootPoint: {fileID: 2409053875093616678}
   muzzleFlash: {fileID: 6850063182815274995}
-  bullet: {fileID: -8923797336694440375, guid: b318b8c13f650f8478dd65698d43c0d1, type: 3}
+  bulletPool: {fileID: 0}
 --- !u!114 &-6716370432108881955
 MonoBehaviour:
   m_ObjectHideFlags: 0
