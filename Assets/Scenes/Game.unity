@@ -1158,6 +1158,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1799432179}
     m_Modifications:
+    - target: {fileID: -959681908576435978, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 1974533284}
+    - target: {fileID: -959681908576435978, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 8567844}
+    - target: {fileID: -959681908576435978, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
+      propertyPath: impactObjectPooler
+      value: 
+      objectReference: {fileID: 1035596135}
     - target: {fileID: 2363286630069537227, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
       propertyPath: bulletPool
       value: 
@@ -5485,14 +5497,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1710448017, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+    - target: {fileID: 601740590, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 8567844}
-    - target: {fileID: 1710448017, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-      propertyPath: impactObjectPooler
-      value: 
-      objectReference: {fileID: 1035596135}
     - target: {fileID: 2269755079325613064, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: cam
       value: 
@@ -5558,6 +5566,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2269755079325613303, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: shoot
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269755079325613303, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1322401215}
@@ -5577,6 +5589,18 @@ PrefabInstance:
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1322401215}
+    - target: {fileID: 6694740813051995727, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 1322401215}
+    - target: {fileID: 6694740813051995727, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 8567844}
+    - target: {fileID: 6694740813051995727, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
+      propertyPath: impactObjectPooler
+      value: 
+      objectReference: {fileID: 1035596135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
 --- !u!1001 &6450639708364668690
@@ -5651,6 +5675,18 @@ PrefabInstance:
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1110185808}
+    - target: {fileID: -5156615957114149466, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 1110185808}
+    - target: {fileID: -5156615957114149466, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 8567844}
+    - target: {fileID: -5156615957114149466, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
+      propertyPath: impactObjectPooler
+      value: 
+      objectReference: {fileID: 1035596135}
     - target: {fileID: 9147911674026981270, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
       propertyPath: m_Name
       value: ShotGun

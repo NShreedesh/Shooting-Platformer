@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2874023866894958113}
   - component: {fileID: -3511450517106834437}
   - component: {fileID: 1002594106779387604}
+  - component: {fileID: -3848469506632371852}
   m_Layer: 9
   m_Name: Machine Gun
   m_TagString: Untagged
@@ -178,6 +179,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upRecoil: 0
   recoilValue: 3
+--- !u!114 &-3848469506632371852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648738434938943724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dc16ad409adef41997ff69b24b140c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
+  impactObjectPooler: {fileID: 0}
+  bulletPool: {fileID: 0}
+  gun: {fileID: -3511450517106834437}
+  muzzleFlash: {fileID: 8610378622952784964}
+  shootPoint: {fileID: 648738434887965585}
+  shootTime: 0
 --- !u!1001 &648738433459764415
 PrefabInstance:
   m_ObjectHideFlags: 0

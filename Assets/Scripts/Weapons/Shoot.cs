@@ -10,14 +10,18 @@ public class Shoot : MonoBehaviour
     [Header("Object Pools")]
     [SerializeField]
     private ImpactObjectPooler impactObjectPooler;
+    [SerializeField]
     private ObjectPool bulletPool;
 
     [Header("Gun Data")]
+    [SerializeField]
     private Gun gun;
     private Recoil recoil;
 
     [Header("Shooting")]
+    [SerializeField]
     private GameObject muzzleFlash;
+    [SerializeField]
     private Transform shootPoint;
 
     [Header("Inputs")]
@@ -27,21 +31,16 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     private float shootTime;
 
-    private void Update()
+    private void Start()
     {
-        ReadInput();
-        CheckShooting();
+        recoil = GetComponent<Recoil>();
     }
 
-    public void Initialize(Gun gun)
+    private void Update()
     {
-        this.gun = gun;
-        shootPoint = gun.shootPoint;
-        muzzleFlash = gun.muzzleFlash;
-        recoil = gun.recoil;
-
-        shootTime = gun.shootDelayTime;
-        bulletPool = gun.bulletPool;
+        if (!gun.IsPicked) return;
+        ReadInput();
+        CheckShooting();
     }
 
     private void CheckShooting()
@@ -72,7 +71,7 @@ public class Shoot : MonoBehaviour
         bullet.Initialize(impactObjectPooler);
         bullet.transform.position = shootPoint.transform.position;
         bullet.Shoot(shootPoint.transform.right);
-        bullet.transform.eulerAngles = gun.transform.eulerAngles;
+        bullet.transform.eulerAngles = transform.eulerAngles;
 
         muzzleFlash.SetActive(true);
         StartCoroutine(DisableMuzzleFlash());

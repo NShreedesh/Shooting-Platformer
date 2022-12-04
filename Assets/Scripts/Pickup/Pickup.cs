@@ -15,7 +15,7 @@ public class Pickup : MonoBehaviour
 
     [Header("PickUp Position")]
     [SerializeField]
-    private Transform hand;
+    private Transform weapon;
     [SerializeField]
     private Transform currentGun;
 
@@ -25,12 +25,6 @@ public class Pickup : MonoBehaviour
     [SerializeField]
     private LayerMask pickupLayer;
 
-    private void Start()
-    {
-        if(currentGun.TryGetComponent(out Gun gun))
-            shoot.Initialize(gun);
-    }
-
     private void Update()
     {
         PickItems();
@@ -38,31 +32,28 @@ public class Pickup : MonoBehaviour
 
     private void PickItems()
     {
-        
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, pickupLayer);
-        if (colliders.Length == 0) return;
-        colliders = colliders.OrderBy(d => Vector2.Distance(d.transform.position, transform.position))
-            .Where(d =>
-            {
-                d.TryGetComponent(out IPickable pickItem);
-                if (!pickItem.IsPicked) return d;
-                return false;
-            })
-            .ToArray();
 
         if (inputManager.PlayerAction.Pick.WasPressedThisFrame())
         {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, pickupLayer);
+            if (colliders.Length == 0) return;
+            colliders = colliders.OrderBy(d => Vector2.Distance(d.transform.position, transform.position))
+                .Where(d =>
+                {
+                    d.TryGetComponent(out IPickable pickItem);
+                    if (!pickItem.IsPicked) return d;
+                    return false;
+                })
+                .ToArray();
+
             colliders[0].TryGetComponent(out IPickable pickItem);
             Transform newGunTransform = colliders[0].transform;
 
-            newGunTransform.parent = hand;
+            newGunTransform.parent = weapon;
             newGunTransform.SetPositionAndRotation(currentGun.position, currentGun.rotation);
             newGunTransform.localScale = currentGun.localScale;
-            Destroy(currentGun.gameObject);
+            currentGun.gameObject.SetActive(false);
             currentGun = newGunTransform;
-
-            if(currentGun.TryGetComponent(out Gun gun)) 
-                shoot.Initialize(gun);
 
             pickItem.Pick();
         }
