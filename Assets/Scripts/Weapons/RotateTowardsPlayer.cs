@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class RotateTowardsPlayer : MonoBehaviour
 {
-    [SerializeField]
     private Camera cam;
-    [SerializeField]
     private InputManager inputManager;
+
+    private void Awake()
+    {
+        cam = Camera.main;
+        inputManager = GetComponentInParent<InputManager>();
+    }
 
     private void Update()
     {
