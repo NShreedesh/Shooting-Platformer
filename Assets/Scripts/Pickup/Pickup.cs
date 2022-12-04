@@ -50,9 +50,14 @@ public class Pickup : MonoBehaviour
         newGunTransform.SetPositionAndRotation(currentGun.position, currentGun.rotation);
         newGunTransform.localScale = currentGun.localScale;
         currentGun.gameObject.SetActive(false);
-        currentGun = newGunTransform;
+        ChangeCurrentGunTransform(newGunTransform);
 
         pickItem.Pick();
+    }
+
+    public void ChangeCurrentGunTransform(Transform gunTransform)
+    {
+        currentGun = gunTransform;
     }
 
 #if UNITY_EDITOR

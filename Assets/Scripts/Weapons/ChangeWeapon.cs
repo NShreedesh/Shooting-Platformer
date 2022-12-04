@@ -6,10 +6,12 @@ public class ChangeWeapon : MonoBehaviour
     [SerializeField]
     private Transform weapon;
     private InputManager inputManager;
+    private Pickup pickUp;
 
     private void Awake()
     {
         inputManager = GetComponent<InputManager>();
+        pickUp= GetComponent<Pickup>();
     }
 
     private void Update()
@@ -34,6 +36,7 @@ public class ChangeWeapon : MonoBehaviour
 
                 weapon.GetChild(i).gameObject.SetActive(false);
                 weapon.GetChild(i + changeValue).gameObject.SetActive(true);
+                pickUp.ChangeCurrentGunTransform(weapon.GetChild(i + changeValue));
                 break;
             }
         }
