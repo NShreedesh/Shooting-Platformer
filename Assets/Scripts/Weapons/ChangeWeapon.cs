@@ -14,16 +14,15 @@ public class ChangeWeapon : MonoBehaviour
         pickUp= GetComponent<Pickup>();
     }
 
-    private void Update()
+    private void Start()
     {
-        if (inputManager.MouseAction.Scroll.ReadValue<float>() > 0)
+        inputManager.MouseAction.Scroll.started += ctx =>
         {
-            Change(1);
-        }
-        if (inputManager.MouseAction.Scroll.ReadValue<float>() < 0)
-        {
-            Change(-1);
-        }
+            if (ctx.ReadValue<float>() > 0)
+                Change(-1);
+            if (ctx.ReadValue<float>() < 0)
+                Change(1);
+        };
     }
 
     private void Change(int changeValue)

@@ -615,10 +615,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1681027287}
     m_Modifications:
-    - target: {fileID: 6450639707241032821, guid: bcd34c428d246964990936961ce58120, type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 1218931782}
     - target: {fileID: 6450639707241032822, guid: bcd34c428d246964990936961ce58120, type: 3}
       propertyPath: m_Name
       value: Barrel (1)
@@ -674,17 +670,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6450639707241032823, guid: bcd34c428d246964990936961ce58120, type: 3}
   m_PrefabInstance: {fileID: 555319468}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &601740591 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 601740591, guid: bbb1b9d8f6a2db943bbdda53f269c639, type: 3}
-  m_PrefabInstance: {fileID: 2269755079318881397}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54ee1e7d140c7f44d96fbb692e76527a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1035596133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,10 +1060,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1681027287}
     m_Modifications:
-    - target: {fileID: 6450639707241032821, guid: bcd34c428d246964990936961ce58120, type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 1218931782}
     - target: {fileID: 6450639707241032822, guid: bcd34c428d246964990936961ce58120, type: 3}
       propertyPath: m_Name
       value: Barrel
@@ -1141,22 +1122,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1799432179}
     m_Modifications:
-    - target: {fileID: -959681908576435978, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 1974533284}
-    - target: {fileID: -959681908576435978, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 601740591}
-    - target: {fileID: -959681908576435978, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
-      propertyPath: impactObjectPooler
-      value: 
-      objectReference: {fileID: 1035596135}
-    - target: {fileID: 2363286630069537227, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 1974533284}
     - target: {fileID: 2409053875009346394, guid: 6de04ed5159b21748ae21f2543d1d03a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5537,10 +5502,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1681027287}
     m_Modifications:
-    - target: {fileID: 6450639707241032821, guid: bcd34c428d246964990936961ce58120, type: 3}
-      propertyPath: objectPool
-      value: 
-      objectReference: {fileID: 1218931782}
     - target: {fileID: 6450639707241032822, guid: bcd34c428d246964990936961ce58120, type: 3}
       propertyPath: m_Name
       value: Barrel
@@ -5598,22 +5559,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1799432179}
     m_Modifications:
-    - target: {fileID: -8409979508979167379, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 1110185808}
-    - target: {fileID: -5156615957114149466, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
-      propertyPath: bulletPool
-      value: 
-      objectReference: {fileID: 1110185808}
-    - target: {fileID: -5156615957114149466, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 601740591}
-    - target: {fileID: -5156615957114149466, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
-      propertyPath: impactObjectPooler
-      value: 
-      objectReference: {fileID: 1035596135}
     - target: {fileID: 9147911674026981270, guid: 020274c85ea5abd4eb2977e584f3d920, type: 3}
       propertyPath: m_Name
       value: ShotGun
