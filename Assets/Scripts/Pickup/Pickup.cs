@@ -4,18 +4,11 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     [Header("Input")]
-    [SerializeField]
     private InputManager inputManager;
-    [SerializeField]
-    private ObjectPool bulletPool;
 
     [Header("PickUp Position")]
     [SerializeField]
-    private Shoot shoot;
-
-    [Header("PickUp Position")]
-    [SerializeField]
-    private Transform weapon;
+    private Transform weaponsParent;
     [SerializeField]
     private Transform currentGun;
 
@@ -25,6 +18,11 @@ public class Pickup : MonoBehaviour
     [SerializeField]
     private LayerMask pickupLayer;
 
+    private void Awake()
+    {
+        inputManager= GetComponent<InputManager>();
+    }
+
     private void Update()
     {
         PickItems();
@@ -32,31 +30,29 @@ public class Pickup : MonoBehaviour
 
     private void PickItems()
     {
+        if (!inputManager.PlayerAction.Pick.WasPressedThisFrame()) return;
 
-        if (inputManager.PlayerAction.Pick.WasPressedThisFrame())
-        {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, pickupLayer);
-            if (colliders.Length == 0) return;
-            colliders = colliders.OrderBy(d => Vector2.Distance(d.transform.position, transform.position))
-                .Where(d =>
-                {
-                    d.TryGetComponent(out IPickable pickItem);
-                    if (!pickItem.IsPicked) return d;
-                    return false;
-                })
-                .ToArray();
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius, pickupLayer);
+        if (colliders.Length == 0) return;
+        colliders = colliders.OrderBy(d => Vector2.Distance(d.transform.position, transform.position))
+            .Where(d =>
+            {
+                d.TryGetComponent(out IPickable pickItem);
+                if (!pickItem.IsPicked) return d;
+                return false;
+            })
+            .ToArray();
 
-            colliders[0].TryGetComponent(out IPickable pickItem);
-            Transform newGunTransform = colliders[0].transform;
+        colliders[0].TryGetComponent(out IPickable pickItem);
+        Transform newGunTransform = colliders[0].transform;
 
-            newGunTransform.parent = weapon;
-            newGunTransform.SetPositionAndRotation(currentGun.position, currentGun.rotation);
-            newGunTransform.localScale = currentGun.localScale;
-            currentGun.gameObject.SetActive(false);
-            currentGun = newGunTransform;
+        newGunTransform.parent = weaponsParent;
+        newGunTransform.SetPositionAndRotation(currentGun.position, currentGun.rotation);
+        newGunTransform.localScale = currentGun.localScale;
+        currentGun.gameObject.SetActive(false);
+        currentGun = newGunTransform;
 
-            pickItem.Pick();
-        }
+        pickItem.Pick();
     }
 
 #if UNITY_EDITOR

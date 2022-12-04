@@ -4,17 +4,13 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [Header("Scripts")]
-    [SerializeField]
     private InputManager inputManager;
 
     [Header("Object Pools")]
-    [SerializeField]
-    private ImpactObjectPooler impactObjectPooler;
-    [SerializeField]
-    private ObjectPool bulletPool;
+    private BulletObjectPooler bulletPooler;
+    ITaggable tagger;
 
     [Header("Gun Data")]
-    [SerializeField]
     private Gun gun;
     private Recoil recoil;
 
@@ -29,11 +25,16 @@ public class Shoot : MonoBehaviour
 
     [Header("Shoot Time")]
     [SerializeField]
+    private float shootDelayTime;
     private float shootTime;
 
-    private void Start()
+    private void Awake()
     {
+        gun = GetComponent<Gun>();
+        inputManager = FindObjectOfType<InputManager>();
+        bulletPooler = FindObjectOfType<BulletObjectPooler>();
         recoil = GetComponent<Recoil>();
+        tagger = GetComponent<ITaggable>();
     }
 
     private void Update()
@@ -56,7 +57,7 @@ public class Shoot : MonoBehaviour
             {
                 recoil.StartRecoil();
                 Hit();
-                shootTime = gun.shootDelayTime;
+                shootTime = shootDelayTime;
             }
         }
         else
@@ -67,8 +68,7 @@ public class Shoot : MonoBehaviour
 
     private void Hit()
     {
-        Bullet bullet = bulletPool.Pool.Get().GetComponent<Bullet>();
-        bullet.Initialize(impactObjectPooler);
+        Bullet bullet = bulletPooler.GetPool(tagger.Tag).Pool.Get().GetComponent<Bullet>();
         bullet.transform.position = shootPoint.transform.position;
         bullet.Shoot(shootPoint.transform.right);
         bullet.transform.eulerAngles = transform.eulerAngles;

@@ -127,8 +127,9 @@ GameObject:
   - component: {fileID: 9147911674026981271}
   - component: {fileID: 9147911674026981266}
   - component: {fileID: 5769590933724066139}
-  - component: {fileID: -8409979508979167379}
+  - component: {fileID: 4577246619908988742}
   - component: {fileID: -8446811234330763777}
+  - component: {fileID: -8409979508979167379}
   - component: {fileID: -5156615957114149466}
   m_Layer: 9
   m_Name: ShotGun
@@ -231,7 +232,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.66, y: 6.2}
   m_EdgeRadius: 0
---- !u!114 &-8409979508979167379
+--- !u!114 &4577246619908988742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,15 +241,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9147911674026981270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 993973c1506fe55449389806872b9f39, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a7eeb97758703b44ab6e0f2883d2177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <IsPicked>k__BackingField: 0
-  recoil: {fileID: 0}
-  shootDelayTime: 0.7
-  shootPoint: {fileID: 9147911673943201003}
-  muzzleFlash: {fileID: 39710668925733694}
-  bulletPool: {fileID: 0}
+  <Tag>k__BackingField: 5
 --- !u!114 &-8446811234330763777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +259,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upRecoil: 0
   recoilValue: 0
+--- !u!114 &-8409979508979167379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147911674026981270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 993973c1506fe55449389806872b9f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <IsPicked>k__BackingField: 0
 --- !u!114 &-5156615957114149466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,9 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 0}
-  impactObjectPooler: {fileID: 0}
   bulletPool: {fileID: 0}
   gun: {fileID: -8409979508979167379}
   muzzleFlash: {fileID: 39710668925733694}
   shootPoint: {fileID: 9147911673943201003}
-  shootTime: 0
+  shootDelayTime: 0.7

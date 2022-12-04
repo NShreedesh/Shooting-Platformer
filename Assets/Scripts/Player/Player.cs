@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Scripts")]
-    [SerializeField]
     private InputManager inputManager;
 
     [Header("Components")]
@@ -40,6 +39,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        inputManager = GetComponent<InputManager>();
     }
 
     private void Update()

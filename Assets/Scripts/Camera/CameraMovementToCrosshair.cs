@@ -3,11 +3,8 @@ using UnityEngine;
 public class CameraMovementToCrosshair : MonoBehaviour
 {
     [Header("Other Scripts")]
-    [SerializeField]
     private InputManager inputManager;
-    [SerializeField]
     private Player player;
-    [SerializeField]
     private Camera cam;
 
     [Header("Sensitivity Values")]
@@ -24,6 +21,13 @@ public class CameraMovementToCrosshair : MonoBehaviour
     [SerializeField]
     private float cameraSpeed = 10;
     private Vector3 cameraGotoPosition;
+
+    private void Awake()
+    {
+        inputManager = FindObjectOfType<InputManager>();
+        player = FindObjectOfType<Player>();
+        cam = GetComponent<Camera>();
+    }
 
     private void Start()
     {

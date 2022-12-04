@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class ChangeWeapon : MonoBehaviour
 {
+    [Header("Scripts")]
     [SerializeField]
     private Transform weapon;
-    [SerializeField]
     private InputManager inputManager;
+
+    private void Awake()
+    {
+        inputManager = GetComponent<InputManager>();
+    }
 
     private void Update()
     {
@@ -29,6 +34,7 @@ public class ChangeWeapon : MonoBehaviour
 
                 weapon.GetChild(i).gameObject.SetActive(false);
                 weapon.GetChild(i + changeValue).gameObject.SetActive(true);
+                break;
             }
         }
     }

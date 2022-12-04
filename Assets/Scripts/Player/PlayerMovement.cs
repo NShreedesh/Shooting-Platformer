@@ -8,13 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Player player;
 
     [Header("Other Scripts")]
-    [SerializeField]
-    private Crosshair crossHair;
-    [SerializeField]
     private InputManager inputManager;
 
     [Header("Components")]
-    [SerializeField]
     private Camera cam;
     private CapsuleCollider2D playerCollider;
 
@@ -49,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     {
         player = GetComponent<Player>();
         playerCollider = GetComponent<CapsuleCollider2D>();
+        inputManager = GetComponent<InputManager>();    
+        cam = Camera.main;
 
         standColliderOffset = playerCollider.offset;
         standColliderSize = playerCollider.size;

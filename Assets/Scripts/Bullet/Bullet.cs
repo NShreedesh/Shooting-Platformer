@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Scripts")]
-    private ImpactObjectPooler impactObjectPooler;
+    private HitImpactObjectPooler impactObjectPooler;
     private PoolObject poolObject;
 
     [Header("Components")]
@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
     {
         poolObject = GetComponent<PoolObject>();
         rb = GetComponent<Rigidbody2D>();
+        impactObjectPooler = FindObjectOfType<HitImpactObjectPooler>();
     }
 
     private void OnEnable()
@@ -44,11 +45,6 @@ public class Bullet : MonoBehaviour
             damagable.Damage(damageBarrel);
         }
         DisableBullet();
-    }
-
-    public void Initialize(ImpactObjectPooler impactObjectPooler)
-    {
-        this.impactObjectPooler = impactObjectPooler;
     }
 
     private void Impact(ITaggable taggable)

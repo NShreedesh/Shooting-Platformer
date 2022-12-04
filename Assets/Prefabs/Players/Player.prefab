@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2269755079325613300}
   - component: {fileID: 2269755079325613301}
   - component: {fileID: 2269755079325613066}
+  - component: {fileID: 601740591}
   - component: {fileID: 2269755079325613067}
   - component: {fileID: 2269755079325613064}
   - component: {fileID: 2269755079325613065}
@@ -77,6 +78,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &601740591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269755079325613070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ee1e7d140c7f44d96fbb692e76527a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2269755079325613067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5fd8a6728cd9d41bf9775d37b8b64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
   rb: {fileID: 0}
   horizontalInput: 0
   jumpInput: 0
@@ -115,9 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d13eaee460489642aa8bc5312b4f1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crossHair: {fileID: 0}
-  inputManager: {fileID: 0}
-  cam: {fileID: 0}
   speed: 300
   crouchSpeed: 100
   runSpeed: 300
@@ -151,10 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98127745dcc5b840a6f44b031cf47a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  bulletPool: {fileID: 0}
-  shoot: {fileID: 0}
-  weapon: {fileID: 4190383554608092684}
+  weaponsParent: {fileID: 4190383554608092684}
   currentGun: {fileID: 2269755081092673494}
   radius: 1.5
   pickupLayer:
@@ -173,7 +179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 4190383554608092684}
-  inputManager: {fileID: 0}
 --- !u!1 &2269755079396758892
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  inputManager: {fileID: 0}
+  inputManager: {fileID: 601740591}
 --- !u!1 &2269755080317117575
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +572,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4190383554608092684}
     m_Modifications:
+    - target: {fileID: -3848469506632371852, guid: 3a2ee5318e1a1e44da0cb1e093cda447, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 601740591}
+    - target: {fileID: -3848469506632371852, guid: 3a2ee5318e1a1e44da0cb1e093cda447, type: 3}
+      propertyPath: shootDelayTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: -3511450517106834437, guid: 3a2ee5318e1a1e44da0cb1e093cda447, type: 3}
       propertyPath: <IsPicked>k__BackingField
       value: 1

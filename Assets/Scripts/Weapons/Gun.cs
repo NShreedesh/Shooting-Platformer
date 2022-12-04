@@ -5,20 +5,13 @@ public class Gun : PickableItem
     [Header("Components")]
     private BoxCollider2D boxCollider;
 
-    [Header("Scripts")]
-    [HideInInspector]
-    public Recoil recoil;
-
-    [Header("Data to be Given")]
-    public float shootDelayTime = 0.3f;
-    public Transform shootPoint;
-    public GameObject muzzleFlash;
-    public ObjectPool bulletPool;
+    private void Awake()
+    {
+        boxCollider= GetComponent<BoxCollider2D>();
+    }
 
     private void Start()
     {
-        boxCollider= GetComponent<BoxCollider2D>();
-        recoil= GetComponent<Recoil>();
         ToggleCollider();
     }
 

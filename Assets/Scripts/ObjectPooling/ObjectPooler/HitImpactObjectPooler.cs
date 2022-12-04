@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ImpactObjectPooler : MonoBehaviour
+public class HitImpactObjectPooler : MonoBehaviour
 {
     [Header("Scripts")]
     [SerializeField]
