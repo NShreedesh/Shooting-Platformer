@@ -200,9 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dc16ad409adef41997ff69b24b140c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  bulletPool: {fileID: 0}
-  gun: {fileID: -3511450517106834437}
   muzzleFlash: {fileID: 8610378622952784964}
   shootPoint: {fileID: 648738434887965585}
   shootDelayTime: 0.3
