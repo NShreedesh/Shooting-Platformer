@@ -7,16 +7,11 @@ public class Health : MonoBehaviour, IDamagable
 
     public void Damage(int amount)
     {
-        DecreaseHealth(amount);
+        HealthAmount -= amount;
 
         if (HealthAmount <= 0)
         {
             Destroy(gameObject);
         }
-    }
-
-    public void DecreaseHealth(int amount)
-    {
-        HealthAmount -= amount;
     }
 }
