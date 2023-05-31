@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class ReturnToPool : MonoBehaviour
+namespace ObjectPooling
 {
-    [Header("Scripts")]
-    private PoolObject poolObject;
-
-    private void Awake()
+    public class ReturnToPool : MonoBehaviour
     {
-        poolObject = GetComponent<PoolObject>();
-    }
+        [Header("Scripts")]
+        private PoolObject poolObject;
 
-    private void OnDisable()
-    {
-        poolObject.Return();
+        private void Awake()
+        {
+            poolObject = GetComponent<PoolObject>();
+        }
+
+        private void OnDisable()
+        {
+            poolObject.Return();
+        }
     }
 }

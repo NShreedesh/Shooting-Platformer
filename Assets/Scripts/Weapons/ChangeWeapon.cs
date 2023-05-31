@@ -1,42 +1,47 @@
+using InputScripts;
+using PickupScripts;
 using UnityEngine;
 
-public class ChangeWeapon : MonoBehaviour
+namespace Weapons
 {
-    [Header("Scripts")]
-    [SerializeField]
-    private Transform weapon;
-    private InputManager inputManager;
-    private Pickup pickUp;
-
-    private void Awake()
+    public class ChangeWeapon : MonoBehaviour
     {
-        inputManager = GetComponent<InputManager>();
-        pickUp= GetComponent<Pickup>();
-    }
+        [Header("Scripts")]
+        [SerializeField]
+        private Transform weapon;
+        private InputManager inputManager;
+        private Pickup pickUp;
 
-    private void Start()
-    {
-        inputManager.MouseAction.Scroll.started += ctx =>
+        private void Awake()
         {
-            if (ctx.ReadValue<float>() > 0)
-                Change(-1);
-            if (ctx.ReadValue<float>() < 0)
-                Change(1);
-        };
-    }
+            inputManager = GetComponent<InputManager>();
+            pickUp= GetComponent<Pickup>();
+        }
 
-    private void Change(int changeValue)
-    {
-        for (int i = 0; i < weapon.childCount; i++)
+        private void Start()
         {
-            if (weapon.GetChild(i).gameObject.activeSelf)
+            inputManager.MouseAction.Scroll.started += ctx =>
             {
-                if (i + changeValue < 0 || i + changeValue > weapon.childCount - 1) return;
+                if (ctx.ReadValue<float>() > 0)
+                    Change(-1);
+                if (ctx.ReadValue<float>() < 0)
+                    Change(1);
+            };
+        }
 
-                weapon.GetChild(i).gameObject.SetActive(false);
-                weapon.GetChild(i + changeValue).gameObject.SetActive(true);
-                pickUp.ChangeCurrentGunTransform(weapon.GetChild(i + changeValue));
-                break;
+        private void Change(int changeValue)
+        {
+            for (int i = 0; i < weapon.childCount; i++)
+            {
+                if (weapon.GetChild(i).gameObject.activeSelf)
+                {
+                    if (i + changeValue < 0 || i + changeValue > weapon.childCount - 1) return;
+
+                    weapon.GetChild(i).gameObject.SetActive(false);
+                    weapon.GetChild(i + changeValue).gameObject.SetActive(true);
+                    pickUp.ChangeCurrentGunTransform(weapon.GetChild(i + changeValue));
+                    break;
+                }
             }
         }
     }

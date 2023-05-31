@@ -1,20 +1,25 @@
+using ObjectPooling.ObjectPooler;
+using TagScripts;
 using UnityEngine;
 
-public class DestructibleObjects : MonoBehaviour
+namespace Destructibles
 {
-    private ITaggable tagger;
-    private BlastImactObjectPooler blastImactObjectPooler;
-
-    private void Awake()
+    public class DestructibleObjects : MonoBehaviour
     {
-        tagger = GetComponent<ITaggable>();
-        blastImactObjectPooler = FindObjectOfType<BlastImactObjectPooler>();
-    }
+        private ITaggable tagger;
+        private BlastImpactObjectPooler blastImpactObjectPooler;
 
-    private void OnDisable()
-    {
-        if (blastImactObjectPooler == null) return;
-        GameObject g = blastImactObjectPooler.GetPool(tagger.Tag).Pool.Get().gameObject;
-        g.transform.position = transform.position;
+        private void Awake()
+        {
+            tagger = GetComponent<ITaggable>();
+            blastImpactObjectPooler = FindObjectOfType<BlastImpactObjectPooler>();
+        }
+
+        private void OnDisable()
+        {
+            if (blastImpactObjectPooler == null) return;
+            GameObject g = blastImpactObjectPooler.GetPool(tagger.Tag).Pool.Get().gameObject;
+            g.transform.position = transform.position;
+        }
     }
 }

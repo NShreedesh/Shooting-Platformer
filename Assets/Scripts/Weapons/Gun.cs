@@ -1,31 +1,35 @@
-﻿using UnityEngine;
+﻿using PickupScripts;
+using UnityEngine;
 
-public class Gun : PickableItem
+namespace Weapons
 {
-    [Header("Components")]
-    private BoxCollider2D boxCollider;
-
-    private void Awake()
+    public class Gun : PickableItem
     {
-        boxCollider= GetComponent<BoxCollider2D>();
-    }
+        [Header("Components")]
+        private BoxCollider2D boxCollider;
 
-    private void Start()
-    {
-        ToggleCollider();
-    }
+        private void Awake()
+        {
+            boxCollider= GetComponent<BoxCollider2D>();
+        }
 
-    public override void Pick()
-    {
-        base.Pick();
-        ToggleCollider();
-    }
+        private void Start()
+        {
+            ToggleCollider();
+        }
 
-    private void ToggleCollider()
-    {
-        if (IsPicked)
-            boxCollider.enabled = false;
-        else
-            boxCollider.enabled = true;
+        public override void Pick()
+        {
+            base.Pick();
+            ToggleCollider();
+        }
+
+        private void ToggleCollider()
+        {
+            if (IsPicked)
+                boxCollider.enabled = false;
+            else
+                boxCollider.enabled = true;
+        }
     }
 }

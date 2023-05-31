@@ -3,22 +3,18 @@ using UnityEngine;
 
 namespace ObjectPooling.ObjectPooler
 {
-    public class HitImpactObjectPooler : MonoBehaviour
+    public class BlastImpactObjectPooler : MonoBehaviour
     {
         [Header("Scripts")]
         [SerializeField]
-        private ObjectPool sandImpactPool;
-        [SerializeField]
-        private ObjectPool barrelImpactPool;
+        private ObjectPool blastImpactPool;
 
         public ObjectPool GetPool(Tag tag)
         {
             switch (tag)
             {
-                case Tag.Sand:
-                    return sandImpactPool;
                 case Tag.Barrel:
-                    return barrelImpactPool;
+                    return blastImpactPool;
             }
 
             return null;

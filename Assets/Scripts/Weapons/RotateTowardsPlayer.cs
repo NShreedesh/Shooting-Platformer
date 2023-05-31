@@ -1,21 +1,25 @@
+using InputScripts;
 using UnityEngine;
 
-public class RotateTowardsPlayer : MonoBehaviour
+namespace Weapons
 {
-    private Camera cam;
-    private InputManager inputManager;
-
-    private void Awake()
+    public class RotateTowardsPlayer : MonoBehaviour
     {
-        cam = Camera.main;
-        inputManager = GetComponentInParent<InputManager>();
-    }
+        private Camera cam;
+        private InputManager inputManager;
 
-    private void Update()
-    {
-        Vector2 direction = (cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>()) - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = rotation;
+        private void Awake()
+        {
+            cam = Camera.main;
+            inputManager = GetComponentInParent<InputManager>();
+        }
+
+        private void Update()
+        {
+            Vector2 direction = (cam.ScreenToWorldPoint(inputManager.MouseAction.Position.ReadValue<Vector2>()) - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = rotation;
+        }
     }
 }

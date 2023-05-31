@@ -1,17 +1,20 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class PoolObject : MonoBehaviour
+namespace ObjectPooling
 {
-    private IObjectPool<PoolObject> objectPool;
-
-    public void Initialize(IObjectPool<PoolObject> pool)
+    public class PoolObject : MonoBehaviour
     {
-        objectPool = pool;
-    }
+        private IObjectPool<PoolObject> objectPool;
 
-    public void Return()
-    {
-        objectPool.Release(this);
+        public void Initialize(IObjectPool<PoolObject> pool)
+        {
+            objectPool = pool;
+        }
+
+        public void Return()
+        {
+            objectPool.Release(this);
+        }
     }
 }

@@ -1,30 +1,33 @@
 using UnityEngine;
 
-public class Recoil : MonoBehaviour
+namespace Weapons
 {
-    [SerializeField]
-    private bool upRecoil;
-    [SerializeField]
-    private float recoilValue = 2;
-
-    public void StartRecoil()
+    public class Recoil : MonoBehaviour
     {
-        if(upRecoil)
-        {
-            StopRecoil();
-            transform.localEulerAngles += new Vector3(0, 0, Random.Range(0f, 1f) * recoilValue);
-            upRecoil = false;
-        }
-        else
-        {
-            StopRecoil();
-            transform.localEulerAngles -= new Vector3(0, 0, Random.Range(0f, 1f) * recoilValue);
-            upRecoil = true;
-        }
-    }
+        [SerializeField]
+        private bool upRecoil;
+        [SerializeField]
+        private float recoilValue = 2;
 
-    public void StopRecoil()
-    {
-        transform.localEulerAngles = new Vector3(0, 0, 0);
+        public void StartRecoil()
+        {
+            if(upRecoil)
+            {
+                StopRecoil();
+                transform.localEulerAngles += new Vector3(0, 0, Random.Range(0f, 1f) * recoilValue);
+                upRecoil = false;
+            }
+            else
+            {
+                StopRecoil();
+                transform.localEulerAngles -= new Vector3(0, 0, Random.Range(0f, 1f) * recoilValue);
+                upRecoil = true;
+            }
+        }
+
+        public void StopRecoil()
+        {
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
     }
 }
