@@ -14,7 +14,7 @@ namespace Destructibles
             tagger = GetComponent<ITaggable>();
             blastImpactObjectPooler = FindObjectOfType<BlastImpactObjectPooler>();
         }
-
+        
         private void OnDisable()
         {
             if (blastImpactObjectPooler == null) return;
